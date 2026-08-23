@@ -71,7 +71,7 @@ export default function About() {
                   alt="KMJ Productions — Behind the Scenes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-[20%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-20 opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
                   style={{ filter: "brightness(0.98) contrast(1.02) saturate(0.95)", objectPosition: "center 30%" }}
                 />
 

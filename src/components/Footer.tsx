@@ -131,19 +131,6 @@ export default function Footer() {
                         >
                           {text}
                         </span>
-                        {sub && (
-                          <span
-                            style={{
-                              fontFamily: "var(--font-sans)",
-                              fontSize: "10px",
-                              color: "rgba(245,241,235,0.28)",
-                              marginTop: "2px",
-                              display: "block",
-                            }}
-                          >
-                            {sub}
-                          </span>
-                        )}
                       </>
                     )}
                   </div>
