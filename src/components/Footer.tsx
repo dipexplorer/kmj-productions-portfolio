@@ -1,107 +1,287 @@
 "use client";
 
-import { Instagram, MapPin, Phone, Mail, Heart, Sparkles } from "lucide-react";
+import { Instagram, MapPin, Phone, Mail, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-[#1E1917] to-[#120F0E] text-[#FAF7F2] py-16 overflow-hidden">
-      {/* Fine Canvas Dotted Texture Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#C86A4B_1px,transparent_1px)] [background-size:16px_16px] z-0" 
-        aria-hidden="true"
-      />
-      
-      {/* Warm Ambient Orange Glow in Corner */}
-      <div 
-        className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-primary/20 blur-[120px] pointer-events-none z-0"
-        aria-hidden="true"
-      />
+    <footer className="relative bg-[#0E0C0B] text-[#F5F1EB] overflow-hidden">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
-        {/* Left Column: Brand Bio */}
-        <div className="md:col-span-5 flex flex-col space-y-4">
-          <span className="font-serif text-2xl tracking-[0.15em] font-semibold text-white uppercase">
-            KMJ Productions
-          </span>
-          <p className="font-serif italic text-xs text-[#EFEBE4]/70 max-w-sm leading-relaxed">
-            Guwahati-based couple storytellers capturing raw, joy-filled candid wedding photography and films pan-India.
-          </p>
-          
-          <div className="flex items-center space-x-2 text-[10px] uppercase tracking-widest text-[#FAF7F2]/40 font-mono mt-4">
-            <Sparkles className="w-3.5 h-3.5 text-primary" />
-            <span>Established 2016</span>
-          </div>
-        </div>
+      {/* Top hairline */}
+      <div style={{ height: "1px", background: "rgba(245,241,235,0.06)" }} />
 
-        {/* Middle Column: Location & Contact */}
-        <div className="md:col-span-4 flex flex-col space-y-4">
-          <h4 className="text-[10px] font-mono tracking-[0.3em] uppercase text-primary font-bold">
-            Studio Details
-          </h4>
-          
-          <ul className="space-y-3 text-xs text-[#EFEBE4]/80">
-            <li className="flex items-start space-x-3">
-              <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-              <span>Bela Path, Zoo Road, Guwahati, Assam 781024 (Available Pan-India)</span>
-            </li>
-            <li className="flex items-center space-x-3">
-              <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-              <a href="tel:+917577033248" className="hover:text-primary transition-colors">
-                +91 75770 33248
-              </a>
-            </li>
-            <li className="flex items-center space-x-3">
-              <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-              <a href="mailto:hello@kmjproductions.com" className="hover:text-primary transition-colors">
-                hello@kmjproductions.com
-              </a>
-            </li>
-          </ul>
-        </div>
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
 
-        {/* Right Column: Connect */}
-        <div className="md:col-span-3 flex flex-col space-y-4">
-          <h4 className="text-[10px] font-mono tracking-[0.3em] uppercase text-primary font-bold">
-            Connect With Us
-          </h4>
-          
-          <div className="flex flex-col space-y-3 text-xs">
-            <a 
-              href="https://www.instagram.com/kmjproductions/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center space-x-2 text-[#EFEBE4] hover:text-primary transition-colors"
-            >
-              <Instagram className="w-4 h-4 text-primary" />
-              <span className="font-semibold">@kmjproductions</span>
-            </a>
-            
-            {/* Sister Studio Cross Link */}
-            <div className="pt-2 border-t border-white/10 mt-2">
-              <span className="text-[9px] uppercase tracking-widest text-[#FAF7F2]/40 block mb-1">
-                Sister Studio
-              </span>
-              <a 
-                href="https://www.instagram.com/kmjfotobox/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex items-center space-x-1.5 text-xs text-[#EFEBE4]/75 hover:text-primary transition-colors italic font-serif"
+          {/* Brand column */}
+          <div className="md:col-span-5">
+            <a href="#" style={{ textDecoration: "none" }}>
+              <p
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "16px",
+                  fontWeight: 300,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: "#F5F1EB",
+                  marginBottom: "4px",
+                }}
               >
-                <span>KMJ Fotobox</span>
+                KMJ Productions
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "7px",
+                  letterSpacing: "0.30em",
+                  textTransform: "uppercase",
+                  color: "#B85C3A",
+                }}
+              >
+                Couple Storyteller
+              </p>
+            </a>
+
+            {/* Thin rule */}
+            <div
+              style={{
+                height: "1px",
+                width: "36px",
+                background: "rgba(184,92,58,0.40)",
+                margin: "20px 0",
+              }}
+            />
+
+            <p
+              className="italic"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "13px",
+                lineHeight: 1.75,
+                color: "rgba(245,241,235,0.45)",
+                maxWidth: "300px",
+              }}
+            >
+              Guwahati-based couple storytellers capturing raw, joy-filled wedding photography and films across India.
+            </p>
+
+            <p
+              className="mt-5"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "8.5px",
+                letterSpacing: "0.26em",
+                textTransform: "uppercase",
+                color: "rgba(245,241,235,0.22)",
+              }}
+            >
+              Est. 2016
+            </p>
+          </div>
+
+          {/* Studio details column */}
+          <div className="md:col-span-4">
+            <h4
+              className="mb-6"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "8.5px",
+                letterSpacing: "0.30em",
+                textTransform: "uppercase",
+                color: "#B85C3A",
+              }}
+            >
+              Studio Details
+            </h4>
+            <ul className="flex flex-col gap-4">
+              {[
+                {
+                  Icon: MapPin,
+                  text: "Bela Path, Zoo Road, Guwahati, Assam 781024",
+                  sub: "Available Pan-India",
+                },
+                { Icon: Phone, text: "+91 75770 33248", href: "tel:+917577033248" },
+                { Icon: Mail, text: "hello@kmjproductions.com", href: "mailto:hello@kmjproductions.com" },
+              ].map(({ Icon, text, sub, href }, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <Icon
+                    style={{ width: "13px", height: "13px", color: "#B85C3A", flexShrink: 0, marginTop: "2px" }}
+                  />
+                  <div>
+                    {href ? (
+                      <a
+                        href={href}
+                        style={{
+                          fontFamily: "var(--font-sans)",
+                          fontSize: "12px",
+                          color: "rgba(245,241,235,0.60)",
+                          textDecoration: "none",
+                          transition: "color 0.25s",
+                        }}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#B85C3A")}
+                        onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,241,235,0.60)")}
+                      >
+                        {text}
+                      </a>
+                    ) : (
+                      <>
+                        <span
+                          style={{
+                            fontFamily: "var(--font-sans)",
+                            fontSize: "12px",
+                            color: "rgba(245,241,235,0.60)",
+                            display: "block",
+                          }}
+                        >
+                          {text}
+                        </span>
+                        {sub && (
+                          <span
+                            style={{
+                              fontFamily: "var(--font-sans)",
+                              fontSize: "10px",
+                              color: "rgba(245,241,235,0.28)",
+                              marginTop: "2px",
+                              display: "block",
+                            }}
+                          >
+                            {sub}
+                          </span>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Connect column */}
+          <div className="md:col-span-3">
+            <h4
+              className="mb-6"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "8.5px",
+                letterSpacing: "0.30em",
+                textTransform: "uppercase",
+                color: "#B85C3A",
+              }}
+            >
+              Connect
+            </h4>
+            <div className="flex flex-col gap-4">
+              <a
+                href="https://www.instagram.com/kmjproductions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 transition-colors duration-250"
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "12px",
+                  color: "rgba(245,241,235,0.60)",
+                  textDecoration: "none",
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#B85C3A")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,241,235,0.60)")}
+              >
+                <Instagram style={{ width: "13px", height: "13px", color: "#B85C3A" }} />
+                @kmjproductions
+              </a>
+
+              <div
+                style={{
+                  borderTop: "1px solid rgba(245,241,235,0.07)",
+                  paddingTop: "14px",
+                  marginTop: "4px",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "8px",
+                    letterSpacing: "0.24em",
+                    textTransform: "uppercase",
+                    color: "rgba(245,241,235,0.25)",
+                    display: "block",
+                    marginBottom: "8px",
+                  }}
+                >
+                  Sister Studio
+                </span>
+                <a
+                  href="https://www.instagram.com/kmjfotobox/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="italic transition-colors duration-250"
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "13px",
+                    color: "rgba(245,241,235,0.40)",
+                    textDecoration: "none",
+                  }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#B85C3A")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,241,235,0.40)")}
+                >
+                  KMJ Fotobox
+                </a>
+              </div>
+
+              {/* Enquire CTA */}
+              <a
+                href="#enquiry"
+                className="inline-flex items-center justify-center gap-2 mt-4 transition-all duration-350"
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "8.5px",
+                  fontWeight: 700,
+                  letterSpacing: "0.24em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  padding: "10px 16px",
+                  border: "1px solid rgba(184,92,58,0.35)",
+                  color: "#B85C3A",
+                  background: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "#B85C3A";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#F5F1EB";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#B85C3A";
+                }}
+              >
+                ENQUIRE NOW →
               </a>
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center text-[10px] text-white/40 tracking-wider font-mono gap-4 text-center">
-        <p>&copy; {new Date().getFullYear()} KMJ Productions. All Rights Reserved.</p>
-        <p className="flex items-center gap-1">
-          <span>Crafted with</span>
-          <Heart className="w-3 h-3 text-primary fill-primary" />
-          <span>in Guwahati, Assam</span>
-        </p>
+      {/* Bottom bar */}
+      <div
+        style={{
+          borderTop: "1px solid rgba(245,241,235,0.05)",
+        }}
+      >
+        <div
+          className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 py-6 flex flex-col sm:flex-row justify-between items-center gap-3"
+          style={{
+            fontFamily: "var(--font-sans)",
+            fontSize: "9.5px",
+            letterSpacing: "0.18em",
+            color: "rgba(245,241,235,0.22)",
+          }}
+        >
+          <p>© {new Date().getFullYear()} KMJ Productions. All Rights Reserved.</p>
+          <p className="flex items-center gap-1.5">
+            Crafted with
+            <Heart style={{ width: "10px", height: "10px", color: "#B85C3A", fill: "#B85C3A" }} />
+            in Guwahati, Assam
+          </p>
+        </div>
       </div>
     </footer>
   );

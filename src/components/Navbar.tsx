@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,39 +20,51 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "Films", href: "#films" },
-    { label: "Stories", href: "#gallery" },
-    { label: "The Studio", href: "#about" },
-    { label: "Packages", href: "#packages" },
-    { label: "Testimonials", href: "#testimonials" },
+    { label: "FILMS", href: "#films" },
+    { label: "STORIES", href: "#gallery" },
+    { label: "THE STUDIO", href: "#about" },
+    { label: "PACKAGES", href: "#packages" },
+    { label: "JOURNAL", href: "#journal" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-primary/10 py-4 shadow-sm"
-          : "bg-transparent py-6"
-      }`}
+      className="fixed top-0 left-0 w-full z-50 py-4 bg-[#0E0C0B]/95 border-b border-white/5 shadow-xl backdrop-blur-sm transition-all duration-300"
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 flex items-center justify-between">
         {/* Brand Logo / Wordmark */}
-        <a href="#" className="flex flex-col">
-          <span className="font-serif text-xl tracking-[0.15em] font-semibold text-foreground uppercase">
-            KMJ Productions
+        <a href="#" className="flex flex-col group">
+          <span
+            className="font-serif font-light uppercase transition-colors group-hover:text-primary"
+            style={{ fontSize: "13.5px", letterSpacing: "0.16em", color: "#F5F1EB" }}
+          >
+            KMJ PRODUCTIONS
           </span>
-          <span className="font-sans text-[8px] uppercase tracking-[0.3em] text-primary mt-0.5">
-            Couple Storyteller
+          <span
+            className="font-sans font-semibold uppercase"
+            style={{ fontSize: "7px", letterSpacing: "0.30em", color: "#C86A4B", marginTop: "3px" }}
+          >
+            COUPLE STORYTELLER
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs uppercase tracking-widest text-foreground/80 hover:text-primary transition-colors font-medium"
+              className="transition-colors duration-300 font-medium"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "9.5px",
+                letterSpacing: "0.24em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                color: "rgba(245,241,235,0.58)",
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#C86A4B")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,241,235,0.58)")}
             >
               {link.label}
             </a>
@@ -63,31 +75,50 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href="#enquiry"
-            className="inline-flex items-center space-x-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg"
+            className="inline-flex items-center gap-2 transition-all duration-400"
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontSize: "9.5px",
+              fontWeight: 600,
+              letterSpacing: "0.20em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              color: "#F5F1EB",
+              border: "1px solid rgba(245,241,235,0.25)",
+              padding: "8px 16px",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = "#C86A4B";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#C86A4B";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(245,241,235,0.25)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "#F5F1EB";
+            }}
           >
-            <span>Enquire Now</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            ENQUIRE NOW
+            <span style={{ fontSize: "11px" }}>→</span>
           </a>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-foreground hover:text-primary transition-colors focus:outline-none"
+          className="md:hidden text-[#FDFBF7] hover:text-primary transition-colors focus:outline-none"
         >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {/* Mobile Menu Panel */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-primary/10 shadow-lg px-6 py-8 flex flex-col space-y-6 animate-in fade-in slide-in-from-top-5 duration-300">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#0D0B0A] border-b border-white/10 shadow-2xl px-6 py-8 flex flex-col space-y-6 animate-in fade-in slide-in-from-top-5 duration-300">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-sm uppercase tracking-widest text-foreground font-medium hover:text-primary transition-colors"
+              className="text-xs uppercase tracking-widest text-[#FDFBF7] font-medium hover:text-primary transition-colors"
             >
               {link.label}
             </a>
@@ -95,10 +126,10 @@ export default function Navbar() {
           <a
             href="#enquiry"
             onClick={() => setIsMenuOpen(false)}
-            className="inline-flex items-center justify-center space-x-2 bg-primary hover:bg-primary-dark text-white py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all"
+            className="inline-flex items-center justify-center space-x-2 border border-white/20 text-[#FDFBF7] py-3 text-xs font-bold uppercase tracking-widest transition-all"
           >
-            <span>Enquire Now</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <span>ENQUIRE NOW</span>
+            <span>→</span>
           </a>
         </div>
       )}

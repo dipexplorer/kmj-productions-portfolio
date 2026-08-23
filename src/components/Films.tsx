@@ -19,7 +19,7 @@ const FILMS: Film[] = [
     id: "film-1",
     couple: "Kabir & Rhea",
     title: "The Golden Sunset",
-    duration: "4:12 Min",
+    duration: "4:12",
     location: "Guwahati, Assam",
     image: "/images/film_1.png",
   },
@@ -27,7 +27,7 @@ const FILMS: Film[] = [
     id: "film-2",
     couple: "Dev & Shruthi",
     title: "Splashes of Haldi",
-    duration: "3:45 Min",
+    duration: "3:45",
     location: "Shillong, Meghalaya",
     image: "/images/film_2.png",
   },
@@ -35,7 +35,7 @@ const FILMS: Film[] = [
     id: "film-3",
     couple: "Anirudh & Meera",
     title: "Sacred Pheras",
-    duration: "5:20 Min",
+    duration: "5:20",
     location: "Jaipur, Rajasthan",
     image: "/images/hand-in-hand01.png",
   },
@@ -43,7 +43,7 @@ const FILMS: Film[] = [
     id: "film-4",
     couple: "Ritvik & Sneha",
     title: "Bonfire & Cozy Nights",
-    duration: "2:55 Min",
+    duration: "2:55",
     location: "Sikkim",
     image: "/images/hand-in-hand02.png",
   },
@@ -51,101 +51,219 @@ const FILMS: Film[] = [
 
 export default function Films() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scrollRef = useRef(null);
-  const isInView = useInView(scrollRef, { once: true, margin: "-100px" });
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { once: true, margin: "-80px" });
 
-  const scroll = (direction: "left" | "right") => {
-    if (containerRef.current) {
-      const { scrollLeft, clientWidth } = containerRef.current;
-      const scrollTo =
-        direction === "left"
-          ? scrollLeft - clientWidth / 2
-          : scrollLeft + clientWidth / 2;
-      containerRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
-    }
+  const scroll = (dir: "left" | "right") => {
+    if (!containerRef.current) return;
+    const amount = containerRef.current.clientWidth * 0.55;
+    containerRef.current.scrollBy({ left: dir === "right" ? amount : -amount, behavior: "smooth" });
   };
 
   return (
-    <section id="films" className="py-24 bg-background overflow-hidden" ref={scrollRef}>
-      <div className="max-w-7xl mx-auto px-6 mb-12 flex items-end justify-between">
-        <div>
-          <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-primary font-bold block mb-3">
-            01 // CINEMATOGRAPHY
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-foreground uppercase tracking-wide">
-            Featured Films
-          </h2>
-        </div>
+    <section
+      id="films"
+      ref={sectionRef}
+      className="relative py-28 bg-[#0E0C0B] overflow-hidden"
+    >
+      {/* Ambient top glow */}
+      <div
+        className="absolute top-0 left-1/4 w-96 h-64 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at center, rgba(184,92,58,0.08), transparent 70%)" }}
+      />
 
-        {/* Carousel Controls */}
-        <div className="flex space-x-3">
-          <button
-            onClick={() => scroll("left")}
-            className="p-3 rounded-full border border-primary/20 hover:border-primary text-foreground hover:text-primary transition-all duration-300 focus:outline-none"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            className="p-3 rounded-full border border-primary/20 hover:border-primary text-foreground hover:text-primary transition-all duration-300 focus:outline-none"
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20">
+        {/* Header row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="flex items-end justify-between mb-14"
+        >
+          <div>
+            <span
+              className="section-label block mb-4"
+              style={{ color: "#C86A4B" }}
+            >
+              01 — CINEMATOGRAPHY
+            </span>
+            <h2
+              className="section-heading"
+              style={{
+                fontFamily: "var(--font-hero)",
+                fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
+                color: "#F5F1EB",
+              }}
+            >
+              Featured <span className="italic text-[#C86A4B] font-light">Films</span>
+            </h2>
+          </div>
+
+          {/* Controls */}
+          <div className="flex gap-3">
+            {(["left", "right"] as const).map((dir) => (
+              <button
+                key={dir}
+                onClick={() => scroll(dir)}
+                className="flex items-center justify-center transition-all duration-300"
+                style={{
+                  width: "42px",
+                  height: "42px",
+                  border: "1px solid rgba(245,241,235,0.14)",
+                  color: "rgba(245,241,235,0.55)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "#C86A4B";
+                  (e.currentTarget as HTMLButtonElement).style.color = "#C86A4B";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(245,241,235,0.14)";
+                  (e.currentTarget as HTMLButtonElement).style.color = "rgba(245,241,235,0.55)";
+                }}
+                aria-label={`Scroll ${dir}`}
+              >
+                {dir === "left" ? (
+                  <ChevronLeft style={{ width: "18px", height: "18px" }} />
+                ) : (
+                  <ChevronRight style={{ width: "18px", height: "18px" }} />
+                )}
+              </button>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
-      {/* Horizontal Strip */}
+      {/* Horizontal scrolling film strip */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={{ opacity: 0, x: 40 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         ref={containerRef}
-        className="flex space-x-6 overflow-x-auto overflow-y-hidden px-6 md:px-[calc((100vw-1280px)/2)] scrollbar-none snap-x snap-mandatory"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="scrollbar-none flex gap-5 overflow-x-auto snap-x snap-mandatory"
+        style={{
+          paddingLeft: "max(32px, calc((100vw - 1280px) / 2 + 80px))",
+          paddingRight: "80px",
+        }}
       >
-        {FILMS.map((film, index) => (
+        {FILMS.map((film, i) => (
           <div
             key={film.id}
-            className="shrink-0 w-[280px] sm:w-[420px] aspect-16/10 relative rounded-2xl overflow-hidden group snap-start shadow-md hover:shadow-xl transition-all duration-300"
+            className="shrink-0 snap-start group cursor-pointer relative"
+            style={{ width: "clamp(280px, 38vw, 480px)" }}
           >
+            {/* Crosshairs at grid corners */}
+            <div className="absolute -top-3 -left-3 w-2 h-2 border-t border-l border-[rgba(245,241,235,0.15)] transition-colors duration-500 group-hover:border-[#C86A4B]" />
+            <div className="absolute -bottom-3 -right-3 w-2 h-2 border-b border-r border-[rgba(245,241,235,0.15)] transition-colors duration-500 group-hover:border-[#C86A4B]" />
+
             {/* Thumbnail */}
-            <Image
-              src={film.image}
-              alt={`${film.couple} Wedding Film Thumbnail`}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-[#1E1917]/90 via-[#1E1917]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+            <div
+              className="relative overflow-hidden p-2 sm:p-3"
+              style={{ aspectRatio: "16/10", border: "1px solid rgba(245,241,235,0.06)" }}
+            >
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src={film.image}
+                  alt={`${film.couple} — ${film.title}`}
+                  fill
+                  sizes="(max-width: 640px) 280px, 480px"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-[1.04] filter grayscale-[40%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
+                  style={{ filter: "brightness(0.88) contrast(1.05) saturate(0.90)" }}
+                />
+                
+                {/* Inner hairline matte effect */}
+                <div className="absolute inset-2 border border-[rgba(245,241,235,0.15)] opacity-0 pointer-events-none z-20 transition-all duration-700 group-hover:opacity-100 group-hover:inset-3" />
 
-            {/* Play Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                whileHover={{ scale: 1.15 }}
-                className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white cursor-pointer shadow-lg group-hover:bg-primary group-hover:border-primary transition-all duration-300"
+                {/* Overlay */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-700"
+                  style={{
+                    background: "linear-gradient(to top, rgba(14,12,11,0.92) 0%, rgba(14,12,11,0.25) 50%, transparent 100%)",
+                  }}
+                />
+
+                {/* Play button */}
+                <div className="absolute inset-0 flex items-center justify-center z-20">
+                  <motion.div
+                    whileHover={{ scale: 1.12 }}
+                    className="flex items-center justify-center transition-all duration-300"
+                    style={{
+                      width: "52px",
+                      height: "52px",
+                      border: "1px solid rgba(245,241,235,0.30)",
+                      background: "rgba(14,12,11,0.35)",
+                      backdropFilter: "blur(6px)",
+                      color: "#F5F1EB",
+                    }}
+                  >
+                    <Play style={{ width: "16px", height: "16px", fill: "currentColor", marginLeft: "3px" }} />
+                  </motion.div>
+                </div>
+
+              {/* Duration top-right */}
+              <div
+                className="absolute top-4 right-4 z-20"
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "9px",
+                  letterSpacing: "0.16em",
+                  color: "rgba(245,241,235,0.50)",
+                }}
               >
-                <Play className="w-5 h-5 fill-current ml-1" />
-              </motion.div>
-            </div>
+                {film.duration} min
+              </div>
 
-            {/* Card Footer Text */}
-            <div className="absolute bottom-6 left-6 right-6 text-white flex justify-between items-end">
-              <div>
-                <h3 className="font-serif text-lg sm:text-xl font-bold tracking-wide">
+              {/* Bottom metadata */}
+              <div className="absolute bottom-5 left-5 right-5 z-20">
+                <p
+                  style={{
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "8.5px",
+                    letterSpacing: "0.26em",
+                    textTransform: "uppercase",
+                    color: "#C86A4B",
+                    marginBottom: "5px",
+                  }}
+                >
+                  {film.location}
+                </p>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-hero)",
+                    fontSize: "clamp(1.4rem, 2vw, 1.8rem)",
+                    fontWeight: 400,
+                    color: "#F5F1EB",
+                    lineHeight: 1.1,
+                  }}
+                >
                   {film.couple}
                 </h3>
-                <p className="font-serif italic text-xs text-[#EFEBE4]/80 mt-1">
+                <p
+                  className="italic font-light"
+                  style={{
+                    fontFamily: "var(--font-hero)",
+                    fontSize: "13px",
+                    color: "rgba(245,241,235,0.75)",
+                    marginTop: "5px",
+                  }}
+                >
                   {film.title}
                 </p>
-                <span className="text-[9px] uppercase tracking-widest text-primary font-semibold block mt-2">
-                  {film.location}
-                </span>
               </div>
-              <span className="text-[10px] font-mono tracking-widest text-[#EFEBE4]/60">
-                {film.duration}
-              </span>
+            </div>
+          </div>
+
+            {/* Below-card index */}
+            <div
+              className="mt-3 flex items-center gap-3"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "9px",
+                letterSpacing: "0.20em",
+                color: "rgba(245,241,235,0.22)",
+              }}
+            >
+              <span>{String(i + 1).padStart(2, "0")}</span>
+              <div style={{ flex: 1, height: "1px", background: "rgba(245,241,235,0.08)" }} />
             </div>
           </div>
         ))}
