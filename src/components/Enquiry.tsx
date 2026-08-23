@@ -75,7 +75,7 @@ export default function Enquiry() {
                   placeholder="e.g. Rahul & Neha"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 focus:border-[#B85C3A] px-4 py-3 rounded-none text-xs tracking-wider placeholder:text-[#F5F1EB]/30 text-[#F5F1EB] focus:outline-none transition-all duration-300"
+                  className="enquiry-input"
                 />
               </div>
 
@@ -92,7 +92,7 @@ export default function Enquiry() {
                   placeholder="e.g. +91 xxxxx xxxxx"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 focus:border-[#B85C3A] px-4 py-3 rounded-none text-xs tracking-wider placeholder:text-[#F5F1EB]/30 text-[#F5F1EB] focus:outline-none transition-all duration-300"
+                  className="enquiry-input"
                 />
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function Enquiry() {
                   required
                   value={formData.eventDate}
                   onChange={handleChange}
-                  className="w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 focus:border-[#B85C3A] px-4 py-3 rounded-none text-xs tracking-wider text-[#F5F1EB] focus:outline-none transition-all duration-300"
+                  className="enquiry-input"
                 />
               </div>
 
@@ -124,7 +124,7 @@ export default function Enquiry() {
                   name="eventType"
                   value={formData.eventType}
                   onChange={handleChange}
-                  className="w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 focus:border-[#B85C3A] px-4 py-3 rounded-none text-xs tracking-wider text-[#F5F1EB] focus:outline-none transition-all duration-300"
+                  className="enquiry-input"
                 >
                   <option value="wedding">Wedding</option>
                   <option value="pre-wedding">Pre-Wedding</option>
@@ -143,7 +143,7 @@ export default function Enquiry() {
                   name="packageInterest"
                   value={formData.packageInterest}
                   onChange={handleChange}
-                  className="w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 focus:border-[#B85C3A] px-4 py-3 rounded-none text-xs tracking-wider text-[#F5F1EB] focus:outline-none transition-all duration-300"
+                  className="enquiry-input"
                 >
                   <option value="photo-only">Photo Only</option>
                   <option value="photo-film">Photo + Film</option>
@@ -165,7 +165,7 @@ export default function Enquiry() {
                 placeholder="Tell us a little bit about your wedding flow, venues, or specific requirements..."
                 value={formData.notes}
                 onChange={handleChange}
-                className="w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 focus:border-[#B85C3A] px-4 py-3 rounded-none text-xs tracking-wider placeholder:text-[#F5F1EB]/30 text-[#F5F1EB] focus:outline-none transition-all duration-300 resize-none"
+                className="enquiry-input resize-none"
               />
             </div>
 

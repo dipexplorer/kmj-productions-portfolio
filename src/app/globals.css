@@ -97,3 +97,17 @@ body {
   z-index: 1;
   opacity: 0.06;
 }
+
+@layer components {
+  .enquiry-input {
+    @apply w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 px-4 py-3 rounded-none text-xs tracking-wider text-[#F5F1EB] transition-all duration-300;
+  }
+  
+  .enquiry-input:focus {
+    @apply border-[#B85C3A] outline-none;
+  }
+  
+  .enquiry-input::placeholder {
+    @apply text-[#F5F1EB]/30;
+  }
+}
