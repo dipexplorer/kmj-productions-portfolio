@@ -95,14 +95,10 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-4">
               {[
-                {
-                  Icon: MapPin,
-                  text: "Bela Path, Zoo Road, Guwahati, Assam 781024",
-                  sub: "Available Pan-India",
-                },
-                { Icon: Phone, text: "+91 75770 33248", href: "tel:+917577033248" },
-                { Icon: Mail, text: "hello@kmjproductions.com", href: "mailto:hello@kmjproductions.com" },
-              ].map(({ Icon, text, sub, href }, i) => (
+                { Icon: Phone, text: "+91 xxxxx xxxxx", href: "tel:+91xxxxxxxxxx" },
+                { Icon: Mail, text: "hello@dummymail.com", href: "mailto:hello@dummymail.com" },
+                { Icon: MapPin, text: "Guwahati, Assam", href: "#" },
+              ].map(({ Icon, text, href }, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <Icon
                     style={{ width: "13px", height: "13px", color: "#B85C3A", flexShrink: 0, marginTop: "2px" }}

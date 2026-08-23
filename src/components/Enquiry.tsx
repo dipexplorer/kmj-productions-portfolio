@@ -89,7 +89,7 @@ export default function Enquiry() {
                   type="tel"
                   name="phone"
                   required
-                  placeholder="e.g. +91 98765 43210"
+                  placeholder="e.g. +91 xxxxx xxxxx"
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 focus:border-[#B85C3A] focus:bg-[#0E0C0B] px-4 py-3 rounded-none text-xs tracking-wider placeholder-[#F5F1EB]/30 text-[#F5F1EB] focus:outline-none transition-all duration-300"
