@@ -100,14 +100,27 @@ body {
 
 @layer components {
   .enquiry-input {
-    @apply w-full bg-[#0E0C0B] border border-[#F5F1EB]/15 px-4 py-3 rounded-none text-xs tracking-wider text-[#F5F1EB] transition-all duration-300;
+    width: 100%;
+    background-color: #0E0C0B;
+    border: 1px solid rgba(245, 241, 235, 0.15);
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.05em;
+    color: #F5F1EB;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
   }
   
   .enquiry-input:focus {
-    @apply border-[#B85C3A] outline-none;
+    border-color: #B85C3A;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
   }
   
   .enquiry-input::placeholder {
-    @apply text-[#F5F1EB]/30;
+    color: rgba(245, 241, 235, 0.3);
   }
 }
