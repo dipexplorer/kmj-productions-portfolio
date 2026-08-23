@@ -53,7 +53,7 @@ export default function About() {
             className="relative"
           >
             {/* ── HIGH-END EDITORIAL IMAGE FRAME ── */}
-            <div className="relative aspect-[3/4] p-[1px] group cursor-pointer">
+            <div className="relative aspect-3/4 p-px group cursor-pointer">
               {/* Refined double-border matte */}
               <div className="absolute inset-0 border border-[rgba(245,241,235,0.1)] transition-colors duration-700 group-hover:border-[rgba(200,106,75,0.3)] z-20 pointer-events-none" />
               <div className="absolute inset-3 border border-[rgba(245,241,235,0.05)] transition-all duration-700 group-hover:inset-4 group-hover:border-[rgba(245,241,235,0.15)] z-20 pointer-events-none" />
@@ -71,7 +71,7 @@ export default function About() {
                   alt="KMJ Productions — Behind the Scenes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-[20%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-20 opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
                   style={{ filter: "brightness(0.98) contrast(1.02) saturate(0.95)" }}
                 />
 
@@ -164,7 +164,7 @@ export default function About() {
               animate={inView ? "show" : "hidden"}
               className="mb-8 relative"
             >
-              <div className="w-4 h-[1px] bg-[#C86A4B] mb-5" />
+              <div className="w-4 h-px bg-[#C86A4B] mb-5" />
               <span className="font-sans text-[10px] font-bold tracking-[0.3em] uppercase text-[#F5F1EB]/60">
                 03 <span className="text-[#C86A4B] mx-2">/</span> THE STUDIO
               </span>
@@ -234,7 +234,7 @@ export default function About() {
                   Guwahati <span className="text-[#C86A4B] mx-2">—</span> Travelling Pan-India
                 </span>
               </div>
-              <div className="w-12 h-px bg-gradient-to-r from-[rgba(245,241,235,0.15)] to-transparent ml-6" />
+              <div className="w-12 h-px bg-linear-to-r from-[rgba(245,241,235,0.15)] to-transparent ml-6" />
             </motion.div>
 
             {/* Stats row */}
@@ -245,7 +245,7 @@ export default function About() {
               animate={inView ? "show" : "hidden"}
               className="flex flex-wrap items-center justify-between gap-8 pt-10 relative"
             >
-              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-[rgba(245,241,235,0.1)] to-transparent" />
+              <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-[rgba(245,241,235,0.1)] to-transparent" />
               
               {stats.map(({ icon: Icon, value, label }, i) => (
                 <div key={i} className="flex flex-col gap-2">

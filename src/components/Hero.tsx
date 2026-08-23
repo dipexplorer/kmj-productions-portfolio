@@ -303,7 +303,7 @@ export default function Hero() {
               SCROLL TO EXPLORE
             </span>
             <div
-              className="w-px h-8 bg-gradient-to-b from-[rgba(245,241,235,0.3)] to-transparent"
+              className="w-px h-8 bg-linear-to-b from-[rgba(245,241,235,0.3)] to-transparent"
             />
           </motion.div>
 
@@ -382,8 +382,8 @@ export default function Hero() {
         <div className="absolute -bottom-1 -left-1 w-2 h-2 border-b border-l border-[#C86A4B] opacity-60" />
         <div className="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-[#C86A4B] opacity-60" />
         {/* Minimal decorative dot on edges */}
-        <div className="absolute top-1/2 -translate-y-1/2 -left-[2px] w-[3px] h-[3px] rounded-full bg-[rgba(245,241,235,0.15)]" />
-        <div className="absolute top-1/2 -translate-y-1/2 -right-[2px] w-[3px] h-[3px] rounded-full bg-[rgba(245,241,235,0.15)]" />
+        <div className="absolute top-1/2 -translate-y-1/2 left-[-2px] w-[3px] h-[3px] rounded-full bg-[rgba(245,241,235,0.15)]" />
+        <div className="absolute top-1/2 -translate-y-1/2 right-[-2px] w-[3px] h-[3px] rounded-full bg-[rgba(245,241,235,0.15)]" />
       </div>
 
       {/* ─── FILM GRAIN OVERLAY ───────────────────────────────── */}

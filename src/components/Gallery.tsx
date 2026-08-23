@@ -113,7 +113,7 @@ export default function Gallery() {
           className="mb-16 lg:mb-28 relative"
         >
           {/* Subtle copper accent mark above the label */}
-          <div className="w-4 h-[1px] bg-[#C86A4B] mb-5" />
+          <div className="w-4 h-px bg-[#C86A4B] mb-5" />
           
           <span className="font-sans text-[10px] font-bold tracking-[0.3em] uppercase text-[#F5F1EB]/60 block mb-6">
             02 <span className="text-[#C86A4B] mx-2">/</span> PORTFOLIO
@@ -159,7 +159,7 @@ export default function Gallery() {
             className="mt-8 relative"
             style={{ height: "1px", background: "rgba(245,241,235,0.06)" }}
           >
-             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-transparent to-[rgba(200,106,75,0.4)]" />
+             <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-transparent to-[rgba(200,106,75,0.4)]" />
           </div>
         </motion.div>
 
@@ -183,7 +183,7 @@ export default function Gallery() {
                 <div className="absolute -bottom-3 -right-3 w-2 h-2 border-b border-r border-[rgba(245,241,235,0.15)] transition-all duration-500 group-hover:border-[#C86A4B] group-hover:-bottom-4 group-hover:-right-4 opacity-0 group-hover:opacity-100" />
                 
                 <div
-                  className="relative w-full overflow-hidden aspect-[4/5] p-2 sm:p-2.5 bg-[#0a0908] transition-shadow duration-700 group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)]"
+                  className="relative w-full overflow-hidden aspect-4/5 p-2 sm:p-2.5 bg-[#0a0908] transition-shadow duration-700 group-hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.8)]"
                   style={{ border: "1px solid rgba(245,241,235,0.04)" }}
                 >
                   <div className="relative w-full h-full overflow-hidden">
@@ -261,7 +261,7 @@ export default function Gallery() {
           className="mt-20 lg:mt-32 flex justify-center relative"
         >
           {/* Decorative faint vertical line pointing down to CTA */}
-          <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-px h-10 bg-gradient-to-b from-transparent to-[rgba(245,241,235,0.15)] hidden lg:block" />
+          <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-px h-10 bg-linear-to-b from-transparent to-[rgba(245,241,235,0.15)] hidden lg:block" />
           
           <a
             href="#enquiry"
