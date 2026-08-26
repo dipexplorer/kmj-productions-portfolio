@@ -95,8 +95,8 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-4">
               {[
-                { Icon: Phone, text: "+91 xxxxx xxxxx", href: "tel:+91xxxxxxxxxx" },
-                { Icon: Mail, text: "hello@dummymail.com", href: "mailto:hello@dummymail.com" },
+                { Icon: Phone, text: "+91 98765 43210", href: "tel:+919876543210" },
+                { Icon: Mail, text: "hello@houseoftales.com", href: "mailto:hello@houseoftales.com" },
                 { Icon: MapPin, text: "Mumbai, India", href: "#" },
               ].map(({ Icon, text, href }, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -155,7 +155,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-4">
               <a
-                href="https://www.instagram.com/kmjproductions/"
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 transition-colors duration-250"
@@ -169,7 +169,7 @@ export default function Footer() {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,241,235,0.60)")}
               >
                 <Instagram style={{ width: "13px", height: "13px", color: "#B85C3A" }} />
-                @kmjproductions
+                @houseoftales.weddings
               </a>
 
               <div

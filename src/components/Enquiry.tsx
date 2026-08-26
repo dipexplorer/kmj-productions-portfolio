@@ -89,7 +89,7 @@ export default function Enquiry() {
                   type="tel"
                   name="phone"
                   required
-                  placeholder="e.g. +91 xxxxx xxxxx"
+                  placeholder="e.g. +91 98765 43210"
                   value={formData.phone}
                   onChange={handleChange}
                   className="enquiry-input"
