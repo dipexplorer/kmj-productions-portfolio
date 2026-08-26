@@ -101,8 +101,8 @@ export default function Enquiry() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name */}
               <div className="flex flex-col">
-                <label className="text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-2 flex items-center">
-                  <User className="w-3.5 h-3.5 text-primary mr-1.5" />
+                <label className="text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-3 md:mb-2 flex items-center">
+                  <User className="w-4 h-4 md:w-3.5 md:h-3.5 text-primary mr-1.5" />
                   Your Name
                 </label>
                 <input
@@ -118,8 +118,8 @@ export default function Enquiry() {
 
               {/* Phone */}
               <div className="flex flex-col">
-                <label className="text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-2 flex items-center">
-                  <Phone className="w-3.5 h-3.5 text-primary mr-1.5" />
+                <label className="text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-3 md:mb-2 flex items-center">
+                  <Phone className="w-4 h-4 md:w-3.5 md:h-3.5 text-primary mr-1.5" />
                   Contact Number
                 </label>
                 <input
@@ -137,8 +137,8 @@ export default function Enquiry() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Event Date */}
               <div className="flex flex-col">
-                <label className="text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-2 flex items-center">
-                  <Calendar className="w-3.5 h-3.5 text-primary mr-1.5" />
+                <label className="text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-3 md:mb-2 flex items-center">
+                  <Calendar className="w-4 h-4 md:w-3.5 md:h-3.5 text-primary mr-1.5" />
                   Event Date
                 </label>
                 <input
@@ -153,8 +153,8 @@ export default function Enquiry() {
 
               {/* Event Type */}
               <div className="flex flex-col">
-                <label className="text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-2 flex items-center">
-                  <FolderOpen className="w-3.5 h-3.5 text-primary mr-1.5" />
+                <label className="text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-3 md:mb-2 flex items-center">
+                  <FolderOpen className="w-4 h-4 md:w-3.5 md:h-3.5 text-primary mr-1.5" />
                   Event Type
                 </label>
                 <select
@@ -172,8 +172,8 @@ export default function Enquiry() {
 
               {/* Package Interest */}
               <div className="flex flex-col">
-                <label className="text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-2 flex items-center">
-                  <Tag className="w-3.5 h-3.5 text-primary mr-1.5" />
+                <label className="text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-3 md:mb-2 flex items-center">
+                  <Tag className="w-4 h-4 md:w-3.5 md:h-3.5 text-primary mr-1.5" />
                   Select Tier
                 </label>
                 <select
@@ -192,8 +192,8 @@ export default function Enquiry() {
 
             {/* Notes/Details */}
             <div className="flex flex-col">
-              <label className="text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-2 flex items-center">
-                <MessageSquare className="w-3.5 h-3.5 text-primary mr-1.5" />
+              <label className="text-[11px] md:text-[9px] uppercase tracking-[0.2em] text-[#F5F1EB]/60 font-bold mb-3 md:mb-2 flex items-center">
+                <MessageSquare className="w-4 h-4 md:w-3.5 md:h-3.5 text-primary mr-1.5" />
                 Couple Journey & Notes
               </label>
               <textarea
@@ -211,7 +211,7 @@ export default function Enquiry() {
               {/* Active-state tactile feedback on button */}
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-3 bg-[#F5F1EB] text-[#19160F] py-4 text-[9.5px] font-bold uppercase tracking-[0.26em] cursor-pointer focus:outline-none"
+                className="w-full inline-flex items-center justify-center gap-3 bg-[#F5F1EB] text-[#19160F] py-5 md:py-4 text-[11px] md:text-[9.5px] font-bold uppercase tracking-[0.26em] cursor-pointer focus:outline-none rounded-sm"
                 style={{ transition: "background 0.4s cubic-bezier(0.22,1,0.36,1), color 0.4s cubic-bezier(0.22,1,0.36,1)" }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.background = "#B85C3A";

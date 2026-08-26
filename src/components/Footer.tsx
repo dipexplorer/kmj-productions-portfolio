@@ -30,9 +30,9 @@ export default function Footer() {
                 House of Tales
               </p>
               <p
+                className="text-[9px] md:text-[7px]"
                 style={{
                   fontFamily: "var(--font-sans)",
-                  fontSize: "7px",
                   letterSpacing: "0.30em",
                   textTransform: "uppercase",
                   color: "#B85C3A",
@@ -53,10 +53,9 @@ export default function Footer() {
             />
 
             <p
-              className="italic"
+              className="italic text-[15px] md:text-[13px]"
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: "13px",
                 lineHeight: 1.75,
                 color: "rgba(245,241,235,0.45)",
                 maxWidth: "300px",
@@ -82,10 +81,9 @@ export default function Footer() {
           {/* Studio details column */}
           <div className="md:col-span-4">
             <h4
-              className="mb-6"
+              className="mb-6 text-[10.5px] md:text-[8.5px]"
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: "8.5px",
                 letterSpacing: "0.30em",
                 textTransform: "uppercase",
                 color: "#B85C3A",
@@ -107,9 +105,9 @@ export default function Footer() {
                     {href ? (
                       <a
                         href={href}
+                        className="text-[14px] md:text-[12px]"
                         style={{
                           fontFamily: "var(--font-sans)",
-                          fontSize: "12px",
                           color: "rgba(245,241,235,0.60)",
                           textDecoration: "none",
                           transition: "color 0.25s",
@@ -122,9 +120,9 @@ export default function Footer() {
                     ) : (
                       <>
                         <span
+                          className="text-[14px] md:text-[12px]"
                           style={{
                             fontFamily: "var(--font-sans)",
-                            fontSize: "12px",
                             color: "rgba(245,241,235,0.60)",
                             display: "block",
                           }}
@@ -142,10 +140,9 @@ export default function Footer() {
           {/* Connect column */}
           <div className="md:col-span-3">
             <h4
-              className="mb-6"
+              className="mb-6 text-[10.5px] md:text-[8.5px]"
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: "8.5px",
                 letterSpacing: "0.30em",
                 textTransform: "uppercase",
                 color: "#B85C3A",
@@ -158,10 +155,9 @@ export default function Footer() {
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 transition-colors duration-250"
+                className="inline-flex items-center gap-2.5 transition-colors duration-250 text-[14px] md:text-[12px]"
                 style={{
                   fontFamily: "var(--font-sans)",
-                  fontSize: "12px",
                   color: "rgba(245,241,235,0.60)",
                   textDecoration: "none",
                 }}
@@ -180,9 +176,9 @@ export default function Footer() {
                 }}
               >
                 <span
+                  className="text-[10px] md:text-[8px]"
                   style={{
                     fontFamily: "var(--font-sans)",
-                    fontSize: "8px",
                     letterSpacing: "0.24em",
                     textTransform: "uppercase",
                     color: "rgba(245,241,235,0.25)",
@@ -196,10 +192,9 @@ export default function Footer() {
                   href="https://www.instagram.com/kmjfotobox/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="italic transition-colors duration-250"
+                  className="italic transition-colors duration-250 text-[15px] md:text-[13px]"
                   style={{
                     fontFamily: "var(--font-serif)",
-                    fontSize: "13px",
                     color: "rgba(245,241,235,0.40)",
                     textDecoration: "none",
                   }}
@@ -213,15 +208,14 @@ export default function Footer() {
               {/* Enquire CTA */}
               <a
                 href="#enquiry"
-                className="inline-flex items-center justify-center gap-2 mt-4 transition-all duration-350"
+                className="inline-flex items-center justify-center gap-2 mt-4 transition-all duration-350 text-[10.5px] md:text-[8.5px]"
                 style={{
                   fontFamily: "var(--font-sans)",
-                  fontSize: "8.5px",
                   fontWeight: 700,
                   letterSpacing: "0.24em",
                   textTransform: "uppercase",
                   textDecoration: "none",
-                  padding: "10px 16px",
+                  padding: "12px 18px",
                   border: "1px solid rgba(184,92,58,0.35)",
                   color: "#B85C3A",
                   background: "transparent",

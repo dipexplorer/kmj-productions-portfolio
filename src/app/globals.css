@@ -127,9 +127,9 @@ body::after {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid rgba(245, 241, 235, 0.18);
-    padding: 0.875rem 0;
+    padding: 1rem 0;
     border-radius: 0;
-    font-size: 0.8125rem;
+    font-size: 1rem;
     line-height: 1.5;
     letter-spacing: 0.03em;
     color: #F5F1EB;
