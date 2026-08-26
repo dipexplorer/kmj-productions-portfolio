@@ -50,7 +50,7 @@ export default function About() {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full max-w-lg mx-auto lg:max-w-none"
+            className="relative w-full max-w-lg mx-auto lg:max-w-none order-2 lg:order-1 mt-10 lg:mt-0"
           >
             {/* ── HIGH-END DECONSTRUCTED EDITORIAL FRAME ── */}
             <div className="relative aspect-[3/3.8] group cursor-pointer mt-8 md:ml-4 mb-8 md:mb-4">
@@ -177,7 +177,7 @@ export default function About() {
           </motion.div>
 
           {/* ── TEXT COLUMN ─────────────────────────── */}
-          <div className="flex flex-col">
+          <div className="flex flex-col order-1 lg:order-2">
             {/* Label */}
             <motion.div
               custom={0}
