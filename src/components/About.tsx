@@ -53,7 +53,7 @@ export default function About() {
             className="relative w-full max-w-lg mx-auto lg:max-w-none order-2 lg:order-1 mt-10 lg:mt-0"
           >
             {/* ── HIGH-END DECONSTRUCTED EDITORIAL FRAME ── */}
-            <div className="relative aspect-[3/3.8] group cursor-pointer mt-8 md:ml-4 mb-8 md:mb-4">
+            <div className="relative aspect-square md:aspect-[3/3.8] group cursor-pointer mt-8 md:ml-4 mb-8 md:mb-4">
               
               {/* Deconstructed Border Frame - Extending outside the image bounds */}
               <div className="absolute -inset-4 md:-inset-6 border border-[rgba(245,241,235,0.12)] z-0 transition-all duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01] group-hover:border-[rgba(200,106,75,0.3)]" />
@@ -92,13 +92,13 @@ export default function About() {
 
                 {/* Bottom caption with gradient fade */}
                 <div
-                  className="absolute bottom-0 inset-x-0 p-6 md:p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
+                  className="absolute bottom-0 inset-x-0 p-6 md:p-8 z-20 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-1000"
                   style={{
                     background: "linear-gradient(to top, rgba(14,12,11,0.98) 0%, rgba(14,12,11,0.4) 50%, transparent 100%)",
                   }}
                 >
                   <p
-                    className="italic font-light transform translate-y-4 group-hover:translate-y-0 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]"
+                    className="italic font-light transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]"
                     style={{
                       fontFamily: "var(--font-hero)",
                       fontSize: "13px",
