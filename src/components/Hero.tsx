@@ -52,7 +52,7 @@ export default function Hero() {
       >
         <motion.div className="relative w-full h-full" style={{ scale: imageScale }}>
           <Image
-            src="/images/wedding_hero_editorial.png"
+            src="/images/hero_section_frame.png"
             alt="Assamese wedding couple in traditional Mekhela Chador and Gamosa — House of Tales"
             fill
             priority

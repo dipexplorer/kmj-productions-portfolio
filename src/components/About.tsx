@@ -67,7 +67,7 @@ export default function About() {
               {/* Main image container */}
               <div className="relative w-full h-full overflow-hidden bg-[#0a0908]">
                 <Image
-                  src="/images/about_luxury_candid.png"
+                  src="/images/STORYTELLERS.png"
                   alt="House of Tales — Behind the Scenes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
