@@ -26,13 +26,13 @@ export default function Hero() {
         className="absolute top-0 right-0 h-[110%] w-full md:w-[65%] z-0"
       >
         <Image
-          src="/images/assamese_couple.png"
+          src="/images/wedding_hero_editorial.png"
           alt="Wedding couple — House of Tales"
           fill
           priority
           unoptimized
           sizes="(max-width: 768px) 100vw, 65vw"
-          className="object-cover object-[20%_center] select-none"
+          className="object-cover object-[center_center] select-none"
           style={{ filter: "brightness(0.97) contrast(1.03) saturate(0.95)" }}
         />
         {/* Left bleed gradient — smooth, organic integration into dark zone */}

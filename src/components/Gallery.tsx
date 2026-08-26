@@ -37,9 +37,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "g-4",
     couple: "Rohan & Priya",
-    storyType: "Splashes of Haldi",
+    storyType: "Under the Fairy Lights",
     category: "events",
-    image: "/images/hand-in-hand02.png",
+    image: "/images/wedding_candid_embrace.png",
   },
   {
     id: "g-5",
