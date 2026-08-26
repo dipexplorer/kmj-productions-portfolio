@@ -35,7 +35,7 @@ export default function Enquiry() {
       events: "Corporate/Other Event",
     };
 
-    const text = `Hi Aura Studios, I'd like to enquire about booking your photography & film services!\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Event Date:* ${formData.eventDate}\n*Event Type:* ${eventNames[formData.eventType]}\n*Package Interest:* ${packageNames[formData.packageInterest]}\n*Notes/Details:* ${formData.notes || "None"}\n\nI visited your portfolio and would love to hear back about your availability and rates. Thank you!`;
+    const text = `Hi House of Tales, I'd like to enquire about booking your photography & film services!\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Event Date:* ${formData.eventDate}\n*Event Type:* ${eventNames[formData.eventType]}\n*Package Interest:* ${packageNames[formData.packageInterest]}\n*Notes/Details:* ${formData.notes || "None"}\n\nI visited your portfolio and would love to hear back about your availability and rates. Thank you!`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappNumber = "917577033248"; // Standard agency contact / client phone

@@ -14,7 +14,7 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Aura did not just take photos — they captured our dynamic. Running through that sunset mustard field felt like a normal date, and looking at the pictures, we can hear our laughter and feel the breeze. They made us feel so comfortable we forgot the cameras were even there. Truly magicians of raw emotion.",
+      "House of Tales did not just take photos — they captured our dynamic. Running through that sunset mustard field felt like a normal date, and looking at the pictures, we can hear our laughter and feel the breeze. They made us feel so comfortable we forgot the cameras were even there. Truly magicians of raw emotion.",
     couple: "Aarav & Maya",
     location: "Mumbai, India",
     storyType: "Editorial Wedding & Film",
@@ -28,7 +28,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "From our first bonfire shoot in Kerala to our wedding in Udaipur, Aura's lens captured our transition with such sensitivity. They reject stiff poses in favour of actual playfulness. We couldn't have asked for a better couple storyteller to preserve our memories.",
+      "From our first bonfire shoot in Kerala to our wedding in Udaipur, House of Tales captured our transition with such sensitivity. They reject stiff poses in favour of actual playfulness. We couldn't have asked for a better couple storyteller to preserve our memories.",
     couple: "Vikram & Sneha",
     location: "Udaipur, Rajasthan",
     storyType: "Destination Storybook",

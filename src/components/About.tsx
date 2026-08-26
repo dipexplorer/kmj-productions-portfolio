@@ -68,7 +68,7 @@ export default function About() {
               <div className="relative w-full h-full overflow-hidden bg-[#0a0908]">
                 <Image
                   src="/images/about_luxury_candid.png"
-                  alt="Aura Studios — Behind the Scenes"
+                  alt="House of Tales — Behind the Scenes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-20 opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
@@ -108,7 +108,7 @@ export default function About() {
                 height: "120px",
               }}
             >
-              {/* Center AURA Text */}
+              {/* Center HOUSE OF TALES Text */}
               <div className="text-center">
                 <span
                   style={{
@@ -120,7 +120,7 @@ export default function About() {
                     display: "block",
                   }}
                 >
-                  AURA
+                  HOUSE OF TALES
                 </span>
               </div>
               
@@ -200,7 +200,7 @@ export default function About() {
             >
               <p>
                 We don&apos;t do stiff, traditional poses. Based in Mumbai, India,{" "}
-                <strong style={{ color: "#F5F1EB", fontWeight: 500 }}>Aura Studios</strong> is a
+                <strong style={{ color: "#F5F1EB", fontWeight: 500 }}>House of Tales</strong> is a
                 collective of candid photographers and cinematic filmmakers dedicated to catching love
                 in its truest, most joyful motion.
               </p>

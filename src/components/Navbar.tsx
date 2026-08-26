@@ -38,7 +38,7 @@ export default function Navbar() {
             className="font-serif font-light uppercase transition-colors group-hover:text-primary"
             style={{ fontSize: "13.5px", letterSpacing: "0.16em", color: "#F5F1EB" }}
           >
-            AURA STUDIOS
+            HOUSE OF TALES
           </span>
           <span
             className="font-sans font-semibold uppercase"

@@ -27,7 +27,7 @@ export default function Footer() {
                   marginBottom: "4px",
                 }}
               >
-                Aura Studios
+                House of Tales
               </p>
               <p
                 style={{
@@ -206,7 +206,7 @@ export default function Footer() {
                   onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#B85C3A")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,241,235,0.40)")}
                 >
-                  Aura Fotobox
+                  House of Tales Fotobox
                 </a>
               </div>
 
@@ -258,7 +258,7 @@ export default function Footer() {
             color: "rgba(245,241,235,0.22)",
           }}
         >
-          <p>© {new Date().getFullYear()} Aura Studios. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} House of Tales. All Rights Reserved.</p>
           <p className="flex items-center gap-1 md:gap-2">
             Designed with <Heart className="w-3 h-3 text-[#B85C3A]" />{" "}
             in Mumbai, India

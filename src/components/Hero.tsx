@@ -27,7 +27,7 @@ export default function Hero() {
       >
         <Image
           src="/images/assamese_couple.png"
-          alt="Wedding couple — Aura Studios"
+          alt="Wedding couple — House of Tales"
           fill
           priority
           unoptimized
@@ -307,7 +307,7 @@ export default function Hero() {
             />
           </motion.div>
 
-          {/* Bottom-right: Subtle AURA Mark */}
+          {/* Bottom-right: Subtle HOUSE OF TALES Mark */}
           <motion.div
             initial={{ opacity: 0, scale: 0.88 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -322,7 +322,7 @@ export default function Hero() {
                 letterSpacing: "0.1em",
               }}
             >
-              AURA
+              HOUSE OF TALES
             </span>
             <div className="w-6 h-px bg-[rgba(245,241,235,0.15)]" />
           </motion.div>
