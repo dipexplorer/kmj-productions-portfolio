@@ -44,7 +44,10 @@ export default function Navbar() {
           WebkitBackdropFilter: isScrolled ? "blur(12px)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 flex items-center justify-between h-[68px]">
+        <div 
+          className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 flex items-center justify-between transition-all duration-500"
+          style={{ height: isScrolled ? "68px" : "96px" }}
+        >
           {/* Brand Wordmark */}
           <a href="#" className="flex flex-col group" aria-label="House of Tales home">
             <span
