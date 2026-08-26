@@ -61,7 +61,7 @@ export default function Footer() {
                 maxWidth: "300px",
               }}
             >
-              Mumbai-based couple storytellers capturing raw, joy-filled wedding photography and films across India.
+              Guwahati-based couple storytellers capturing raw, joy-filled wedding photography and films across India.
             </p>
 
             <p
@@ -95,7 +95,7 @@ export default function Footer() {
               {[
                 { Icon: Phone, text: "+91 98765 43210", href: "tel:+919876543210" },
                 { Icon: Mail, text: "hello@houseoftales.com", href: "mailto:hello@houseoftales.com" },
-                { Icon: MapPin, text: "Mumbai, India", href: "#" },
+                { Icon: MapPin, text: "Guwahati, India", href: "#" },
               ].map(({ Icon, text, href }, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <Icon
@@ -255,7 +255,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} House of Tales. All Rights Reserved.</p>
           <p className="flex items-center gap-1 md:gap-2">
             Designed with <Heart className="w-3 h-3 text-[#B85C3A]" />{" "}
-            in Mumbai, India
+            in Guwahati, India
           </p>
         </div>
       </div>

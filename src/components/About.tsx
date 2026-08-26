@@ -106,7 +106,7 @@ export default function About() {
                       letterSpacing: "0.02em",
                     }}
                   >
-                    Behind the lens — Mumbai, India
+                    Behind the lens — Guwahati, India
                   </p>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function About() {
               }}
             >
               <p>
-                We don&apos;t do stiff, traditional poses. Based in Mumbai, India,{" "}
+                We don&apos;t do stiff, traditional poses. Based in Guwahati, India,{" "}
                 <strong style={{ color: "#F5F1EB", fontWeight: 500 }}>House of Tales</strong> is a
                 collective of candid photographers and cinematic filmmakers dedicated to catching love
                 in its truest, most joyful motion.
@@ -253,7 +253,7 @@ export default function About() {
                     color: "rgba(245,241,235,0.8)",
                   }}
                 >
-                  Mumbai <span className="text-[#C86A4B] mx-2">—</span> Travelling Pan-India
+                  Guwahati <span className="text-[#C86A4B] mx-2">—</span> Travelling Pan-India
                 </span>
               </div>
               <div className="w-12 h-px bg-linear-to-r from-[rgba(245,241,235,0.15)] to-transparent ml-6" />

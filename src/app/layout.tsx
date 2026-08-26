@@ -23,8 +23,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "House of Tales | Story-driven Wedding Photography & Films",
-  description: "Candid, warm, and golden-toned couple storyteller. Based in Mumbai, capturing weddings and films pan-India.",
-  keywords: ["wedding photography Mumbai", "candid wedding photographer India", "wedding films Mumbai", "House of Tales", "couple storyteller Mumbai"],
+  description: "Candid, warm, and golden-toned couple storyteller. Based in Guwahati, capturing weddings and films pan-India.",
+  keywords: ["wedding photography Guwahati", "candid wedding photographer India", "wedding films Guwahati", "House of Tales", "couple storyteller Guwahati"],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

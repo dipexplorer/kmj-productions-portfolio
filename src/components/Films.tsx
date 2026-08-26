@@ -30,7 +30,7 @@ const FILMS: Film[] = [
     couple: "Aarav & Maya",
     title: "The Golden Sunset",
     duration: "4:12 min",
-    location: "Mumbai, India",
+    location: "Guwahati, India",
     image: "/images/film_1.png",
   },
   {

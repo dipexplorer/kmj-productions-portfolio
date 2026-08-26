@@ -16,7 +16,7 @@ const TESTIMONIALS: Testimonial[] = [
     quote:
       "House of Tales did not just take photos — they captured our dynamic. Running through that sunset mustard field felt like a normal date, and looking at the pictures, we can hear our laughter and feel the breeze. They made us feel so comfortable we forgot the cameras were even there. Truly magicians of raw emotion.",
     couple: "Aarav & Maya",
-    location: "Mumbai, India",
+    location: "Guwahati, India",
     storyType: "Editorial Wedding & Film",
   },
   {
