@@ -29,14 +29,14 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "g-3",
-    couple: "Kabir & Rhea",
+    couple: "Aarav & Maya",
     storyType: "Joyous Escape",
     category: "candid",
     image: "/images/foreheads_touching.png",
   },
   {
     id: "g-4",
-    couple: "Dev & Shruthi",
+    couple: "Rohan & Priya",
     storyType: "Splashes of Haldi",
     category: "events",
     image: "/images/hand-in-hand02.png",
@@ -50,7 +50,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "g-6",
-    couple: "Ritvik & Sneha",
+    couple: "Karan & Aditi",
     storyType: "A Sacred Vow",
     category: "wedding",
     image: "/images/gallery_candid.png",

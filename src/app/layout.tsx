@@ -22,9 +22,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "KMJ Productions | Story-driven Wedding Photography & Films",
-  description: "Candid, warm, and golden-toned couple storyteller. Based in Guwahati, capturing weddings and films pan-India.",
-  keywords: ["wedding photography Guwahati", "candid wedding photographer Assam", "wedding films Guwahati", "KMJ Productions", "couple storyteller Guwahati"],
+  title: "Aura Studios | Story-driven Wedding Photography & Films",
+  description: "Candid, warm, and golden-toned couple storyteller. Based in Mumbai, capturing weddings and films pan-India.",
+  keywords: ["wedding photography Mumbai", "candid wedding photographer India", "wedding films Mumbai", "Aura Studios", "couple storyteller Mumbai"],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

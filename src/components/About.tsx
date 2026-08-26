@@ -68,7 +68,7 @@ export default function About() {
               <div className="relative w-full h-full overflow-hidden bg-[#0a0908]">
                 <Image
                   src="/images/about_luxury_candid.png"
-                  alt="KMJ Productions — Behind the Scenes"
+                  alt="Aura Studios — Behind the Scenes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-20 opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
@@ -91,7 +91,7 @@ export default function About() {
                       letterSpacing: "0.02em",
                     }}
                   >
-                    Behind the lens — Guwahati, Assam
+                    Behind the lens — Mumbai, India
                   </p>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function About() {
                 height: "120px",
               }}
             >
-              {/* Center KMJ Text */}
+              {/* Center AURA Text */}
               <div className="text-center">
                 <span
                   style={{
@@ -120,7 +120,7 @@ export default function About() {
                     display: "block",
                   }}
                 >
-                  KMJ
+                  AURA
                 </span>
               </div>
               
@@ -199,8 +199,8 @@ export default function About() {
               }}
             >
               <p>
-                We don&apos;t do stiff, traditional poses. Based in Guwahati, Assam,{" "}
-                <strong style={{ color: "#F5F1EB", fontWeight: 500 }}>KMJ Productions</strong> is a
+                We don&apos;t do stiff, traditional poses. Based in Mumbai, India,{" "}
+                <strong style={{ color: "#F5F1EB", fontWeight: 500 }}>Aura Studios</strong> is a
                 collective of candid photographers and cinematic filmmakers dedicated to catching love
                 in its truest, most joyful motion.
               </p>
@@ -231,7 +231,7 @@ export default function About() {
                     color: "rgba(245,241,235,0.8)",
                   }}
                 >
-                  Guwahati <span className="text-[#C86A4B] mx-2">—</span> Travelling Pan-India
+                  Mumbai <span className="text-[#C86A4B] mx-2">—</span> Travelling Pan-India
                 </span>
               </div>
               <div className="w-12 h-px bg-linear-to-r from-[rgba(245,241,235,0.15)] to-transparent ml-6" />

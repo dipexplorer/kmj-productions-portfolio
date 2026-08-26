@@ -14,23 +14,23 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "KMJ did not just take photos — they captured our dynamic. Running through that sunset mustard field felt like a normal date, and looking at the pictures, we can hear our laughter and feel the breeze. They made us feel so comfortable we forgot the cameras were even there. Truly magicians of raw emotion.",
-    couple: "Vipul & Neha",
-    location: "Guwahati, Assam",
+      "Aura did not just take photos — they captured our dynamic. Running through that sunset mustard field felt like a normal date, and looking at the pictures, we can hear our laughter and feel the breeze. They made us feel so comfortable we forgot the cameras were even there. Truly magicians of raw emotion.",
+    couple: "Aarav & Maya",
+    location: "Mumbai, India",
     storyType: "Editorial Wedding & Film",
   },
   {
     quote:
       "Their films feel like high-end editorial cinema rather than a generic wedding video. The Haldi teaser feels like a vibrant music video, and the main highlight is so intimate it brings tears to our eyes every time. The team became like family during three days of shooting.",
-    couple: "Dev & Shruthi",
-    location: "Shillong, Meghalaya",
+    couple: "Rohan & Priya",
+    location: "Goa, India",
     storyType: "Candid Love Story",
   },
   {
     quote:
-      "From our first bonfire shoot in Sikkim to our wedding in Jaipur, KMJ's lens captured our transition with such sensitivity. They reject stiff poses in favour of actual playfulness. We couldn't have asked for a better couple storyteller to preserve our memories.",
-    couple: "Anirudh & Meera",
-    location: "Jaipur, Rajasthan",
+      "From our first bonfire shoot in Kerala to our wedding in Udaipur, Aura's lens captured our transition with such sensitivity. They reject stiff poses in favour of actual playfulness. We couldn't have asked for a better couple storyteller to preserve our memories.",
+    couple: "Vikram & Sneha",
+    location: "Udaipur, Rajasthan",
     storyType: "Destination Storybook",
   },
 ];

@@ -38,7 +38,7 @@ export default function Navbar() {
             className="font-serif font-light uppercase transition-colors group-hover:text-primary"
             style={{ fontSize: "13.5px", letterSpacing: "0.16em", color: "#F5F1EB" }}
           >
-            KMJ PRODUCTIONS
+            AURA STUDIOS
           </span>
           <span
             className="font-sans font-semibold uppercase"

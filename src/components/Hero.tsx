@@ -27,7 +27,7 @@ export default function Hero() {
       >
         <Image
           src="/images/assamese_couple.png"
-          alt="Assamese wedding couple — KMJ Productions"
+          alt="Wedding couple — Aura Studios"
           fill
           priority
           unoptimized
@@ -74,7 +74,7 @@ export default function Hero() {
         {/* Solid background */}
         <div className="absolute inset-0 bg-[#0E0C0B]" />
         
-        {/* Graphic: Faint Assamese-Inspired Weave Pattern (Kept extremely subtle for texture) */}
+        {/* Graphic: Faint Textured Pattern (Kept extremely subtle for texture) */}
         <div
           className="absolute inset-0 z-0 opacity-[0.015] pointer-events-none"
           style={{
@@ -129,7 +129,7 @@ export default function Hero() {
                     fontFamily: "var(--font-sans)",
                   }}
                 >
-                  GUWAHATI &amp; DESTINATIONS PAN-INDIA
+                  <span className="text-[#C86A4B] mr-2">✦</span> MUMBAI & DESTINATIONS PAN-INDIA
                 </span>
               </motion.div>
 
@@ -173,7 +173,7 @@ export default function Hero() {
                     color: "#C86A4B",
                   }}
                 >
-                  ASSAMESE ROOTS. HONEST STORIES.
+                  TIMELESS AESTHETIC. HONEST STORIES.
                 </p>
                 <p
                   className="font-light leading-[1.8]"
@@ -307,7 +307,7 @@ export default function Hero() {
             />
           </motion.div>
 
-          {/* Bottom-right: Subtle KMJ Mark */}
+          {/* Bottom-right: Subtle AURA Mark */}
           <motion.div
             initial={{ opacity: 0, scale: 0.88 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -322,7 +322,7 @@ export default function Hero() {
                 letterSpacing: "0.1em",
               }}
             >
-              KMJ
+              AURA
             </span>
             <div className="w-6 h-px bg-[rgba(245,241,235,0.15)]" />
           </motion.div>

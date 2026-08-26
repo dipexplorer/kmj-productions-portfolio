@@ -27,7 +27,7 @@ export default function Footer() {
                   marginBottom: "4px",
                 }}
               >
-                KMJ Productions
+                Aura Studios
               </p>
               <p
                 style={{
@@ -62,7 +62,7 @@ export default function Footer() {
                 maxWidth: "300px",
               }}
             >
-              Guwahati-based couple storytellers capturing raw, joy-filled wedding photography and films across India.
+              Mumbai-based couple storytellers capturing raw, joy-filled wedding photography and films across India.
             </p>
 
             <p
@@ -97,7 +97,7 @@ export default function Footer() {
               {[
                 { Icon: Phone, text: "+91 xxxxx xxxxx", href: "tel:+91xxxxxxxxxx" },
                 { Icon: Mail, text: "hello@dummymail.com", href: "mailto:hello@dummymail.com" },
-                { Icon: MapPin, text: "Guwahati, Assam", href: "#" },
+                { Icon: MapPin, text: "Mumbai, India", href: "#" },
               ].map(({ Icon, text, href }, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <Icon
@@ -206,7 +206,7 @@ export default function Footer() {
                   onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#B85C3A")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(245,241,235,0.40)")}
                 >
-                  KMJ Fotobox
+                  Aura Fotobox
                 </a>
               </div>
 
@@ -258,11 +258,10 @@ export default function Footer() {
             color: "rgba(245,241,235,0.22)",
           }}
         >
-          <p>© {new Date().getFullYear()} KMJ Productions. All Rights Reserved.</p>
-          <p className="flex items-center gap-1.5">
-            Crafted with
-            <Heart style={{ width: "10px", height: "10px", color: "#B85C3A", fill: "#B85C3A" }} />
-            in Guwahati, Assam
+          <p>© {new Date().getFullYear()} Aura Studios. All Rights Reserved.</p>
+          <p className="flex items-center gap-1 md:gap-2">
+            Designed with <Heart className="w-3 h-3 text-[#B85C3A]" />{" "}
+            in Mumbai, India
           </p>
         </div>
       </div>
