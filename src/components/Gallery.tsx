@@ -127,8 +127,8 @@ export default function Gallery() {
               CANDID <span className="italic text-[#C86A4B] font-light normal-case">Stories</span>
             </h2>
             
-            {/* Filter links — elegant minimal text with editorial border */}
-            <div className="flex flex-wrap items-center gap-6 lg:gap-10 py-5 border-y border-[rgba(245,241,235,0.08)] w-full lg:w-auto">
+            {/* Filter links — elegant minimal text with scrollable horizontal list on mobile */}
+            <div className="flex items-center gap-6 lg:gap-10 py-4 lg:py-5 border-y border-[rgba(245,241,235,0.08)] w-full lg:w-auto overflow-x-auto whitespace-nowrap [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: "none" }}>
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
@@ -153,13 +153,6 @@ export default function Gallery() {
                 </button>
               ))}
             </div>
-          </div>
-          {/* Thin rule under heading */}
-          <div
-            className="mt-8 relative"
-            style={{ height: "1px", background: "rgba(245,241,235,0.06)" }}
-          >
-             <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-transparent to-[rgba(200,106,75,0.4)]" />
           </div>
         </motion.div>
 
@@ -192,20 +185,20 @@ export default function Gallery() {
                       alt={`${item.couple} — ${item.storyType}`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100"
+                      className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-0 opacity-100 md:grayscale md:opacity-70 md:group-hover:grayscale-0 md:group-hover:opacity-100"
                     />
                     
                     {/* Inner hairline matte effect */}
-                    <div className="absolute inset-2 border border-[rgba(245,241,235,0.15)] opacity-0 pointer-events-none z-20 transition-all duration-700 group-hover:opacity-100 group-hover:inset-3" />
+                    <div className="absolute inset-2 md:inset-3 border border-[rgba(245,241,235,0.15)] opacity-100 md:opacity-0 pointer-events-none z-20 transition-all duration-700 md:group-hover:opacity-100" />
 
-                    {/* Hover overlay — elegant single div fade */}
+                    {/* Hover overlay — elegant single div fade (always visible on mobile) */}
                     <div
-                      className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10"
+                      className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 z-10"
                       style={{
-                        background: "linear-gradient(to top, rgba(14,12,11,0.95) 0%, rgba(14,12,11,0.2) 50%, transparent 100%)",
+                        background: "linear-gradient(to top, rgba(14,12,11,0.95) 0%, rgba(14,12,11,0.25) 50%, transparent 100%)",
                       }}
                     >
-                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+                      <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-700">
                         <div className="flex items-center gap-3 mb-3">
                           <div className="w-4 h-px bg-[#C86A4B]" />
                           <p
