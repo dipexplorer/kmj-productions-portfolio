@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -38,13 +38,40 @@ const TESTIMONIALS: Testimonial[] = [
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
   const [mounted, setMounted] = useState(false);
+  const [progress, setProgress] = useState(0);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const progressRef = useRef<NodeJS.Timeout | null>(null);
+  const INTERVAL_MS = 6000;
 
   useEffect(() => { setMounted(true); }, []);
 
-  const next = () => setCurrent((p) => (p + 1) % TESTIMONIALS.length);
-  const prev = () => setCurrent((p) => (p - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const goTo = useCallback((idx: number) => {
+    setCurrent(idx);
+    setProgress(0);
+  }, []);
+
+  const next = useCallback(() => goTo((current + 1) % TESTIMONIALS.length), [current, goTo]);
+  const prev = useCallback(() => goTo((current - 1 + TESTIMONIALS.length) % TESTIMONIALS.length), [current, goTo]);
+
+  // Auto-advance
+  useEffect(() => {
+    const tick = setInterval(next, INTERVAL_MS);
+    return () => clearInterval(tick);
+  }, [next]);
+
+  // Animated progress bar
+  useEffect(() => {
+    setProgress(0);
+    const start = Date.now();
+    const frame = () => {
+      const elapsed = Date.now() - start;
+      setProgress(Math.min(elapsed / INTERVAL_MS, 1));
+      if (elapsed < INTERVAL_MS) progressRef.current = setTimeout(frame, 30);
+    };
+    progressRef.current = setTimeout(frame, 30);
+    return () => { if (progressRef.current) clearTimeout(progressRef.current); };
+  }, [current]);
 
   const t = TESTIMONIALS[current];
   const t0 = TESTIMONIALS[0];
@@ -203,17 +230,23 @@ export default function Testimonials() {
             )
           )}
 
-          {/* Progress indicator */}
+          {/* Progress indicator with live fill */}
           <div className="flex items-center gap-2 ml-2">
             {TESTIMONIALS.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrent(i)}
-                className={`h-0.5 transition-all duration-300 cursor-pointer border-none p-0 rounded-none ${
-                  i === current ? "w-6 bg-[#B85C3A]" : "w-1.5 bg-[#F5F1EB]/18"
-                }`}
+                onClick={() => goTo(i)}
+                className="relative overflow-hidden h-0.5 cursor-pointer border-none p-0 rounded-none transition-all duration-300"
+                style={{ width: i === current ? "24px" : "6px", background: "rgba(245,241,235,0.14)" }}
                 aria-label={`Go to testimonial ${i + 1}`}
-              />
+              >
+                {i === current && (
+                  <span
+                    className="absolute inset-y-0 left-0 bg-[#B85C3A]"
+                    style={{ width: `${progress * 100}%`, transition: "width 30ms linear" }}
+                  />
+                )}
+              </button>
             ))}
           </div>
 

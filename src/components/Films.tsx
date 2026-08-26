@@ -5,6 +5,16 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 24, filter: "blur(3px)" },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.8, delay: 0.1 + i * 0.13, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  }),
+};
+
 interface Film {
   id: string;
   couple: string;
@@ -146,8 +156,12 @@ export default function Films() {
         }}
       >
         {FILMS.map((film, i) => (
-          <div
+          <motion.div
             key={film.id}
+            custom={i}
+            variants={cardVariants}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
             className="shrink-0 snap-start group cursor-pointer relative"
             style={{ width: "clamp(280px, 38vw, 480px)" }}
           >
@@ -166,7 +180,7 @@ export default function Films() {
                   alt={`${film.couple} — ${film.title}`}
                   fill
                   sizes="(max-width: 640px) 280px, 480px"
-                  className="object-cover transition-transform duration-1000 group-hover:scale-[1.04] filter grayscale-[40%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-[1.06] filter grayscale-[40%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
                   style={{ filter: "brightness(0.88) contrast(1.05) saturate(0.90)" }}
                 />
                 
@@ -209,7 +223,7 @@ export default function Films() {
                   color: "rgba(245,241,235,0.50)",
                 }}
               >
-                {film.duration} min
+                {film.duration}
               </div>
 
               {/* Bottom metadata */}
@@ -265,7 +279,7 @@ export default function Films() {
               <span>{String(i + 1).padStart(2, "0")}</span>
               <div style={{ flex: 1, height: "1px", background: "rgba(245,241,235,0.08)" }} />
             </div>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </section>

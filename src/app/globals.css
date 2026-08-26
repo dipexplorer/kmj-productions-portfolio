@@ -14,6 +14,11 @@
   --ivory: #F5F1EB;
   --ivory-2: #EAE5DC;
   --muted: rgba(245, 241, 235, 0.50);
+
+  /* Custom easings */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.45, 0, 0.15, 1);
 }
 
 @theme {
@@ -37,6 +42,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -48,11 +54,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #19160F; }
-::-webkit-scrollbar-thumb { background: #B85C3A; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #7A3218; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0E0C0B; }
+::-webkit-scrollbar-thumb { background: rgba(184,92,58,0.45); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #B85C3A; }
 
 /* Scrollbar hidden for carousels */
 .scrollbar-none::-webkit-scrollbar { display: none; }
@@ -85,42 +103,68 @@ body {
   margin: 16px 0;
 }
 
-/* Film grain overlay (pseudo-element on sections) */
-.grain::after {
+/* Film grain overlay — fixed to avoid GPU repaints on scroll */
+body::after {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   background-repeat: repeat;
-  background-size: 160px 160px;
+  background-size: 180px 180px;
   pointer-events: none;
-  z-index: 1;
-  opacity: 0.06;
+  z-index: 9998;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { display: none; }
 }
 
 @layer components {
   .enquiry-input {
     width: 100%;
-    background-color: #0E0C0B;
-    border: 1px solid rgba(245, 241, 235, 0.15);
-    padding: 0.75rem 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(245, 241, 235, 0.18);
+    padding: 0.875rem 0;
     border-radius: 0;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    letter-spacing: 0.05em;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
     color: #F5F1EB;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
+    transition: border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    appearance: none;
+    -webkit-appearance: none;
   }
   
   .enquiry-input:focus {
-    border-color: #B85C3A;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
+    border-bottom-color: #B85C3A;
+    outline: none;
   }
   
   .enquiry-input::placeholder {
-    color: rgba(245, 241, 235, 0.3);
+    color: rgba(245, 241, 235, 0.28);
+    font-style: italic;
+    font-size: 0.75rem;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.4) sepia(1) saturate(1.5) hue-rotate(340deg);
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  select.enquiry-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(245,241,235,0.4)' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    padding-right: 1.5rem;
+    cursor: pointer;
+  }
+
+  select.enquiry-input option {
+    background: #161210;
+    color: #F5F1EB;
   }
 }

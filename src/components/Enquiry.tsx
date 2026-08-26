@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Send, Calendar, FolderOpen, Tag, User, Phone, MessageSquare } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 
 export default function Enquiry() {
   const [formData, setFormData] = useState({
@@ -42,25 +43,61 @@ export default function Enquiry() {
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, "_blank");
   };
 
-  return (
-    <section id="enquiry" className="py-24 bg-[#0E0C0B]">
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-primary font-bold block mb-3">
-            06 // BOOKINGS
-          </span>
-          <h2 className="font-serif text-3xl md:text-5xl font-semibold text-[#F5F1EB] uppercase tracking-wide">
-            Tell Us Your Story
-          </h2>
-          <p className="font-serif italic text-sm text-[#F5F1EB]/75 mt-3 max-w-md mx-auto">
-            Ready to capture your unscripted moments? Share your date and details below to initiate our WhatsApp conversation.
-          </p>
-        </div>
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
-        {/* Form Card */}
-        <div className="bg-[#161210] border border-[#F5F1EB]/5 p-8 md:p-12 rounded-none">
-          <form onSubmit={handleSubmit} className="space-y-6">
+  return (
+    <section id="enquiry" ref={ref} className="py-28 lg:py-40 bg-[#0E0C0B] relative overflow-hidden">
+      {/* Ambient glow */}
+      <div
+        className="absolute bottom-0 left-1/4 w-[500px] h-64 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at center, rgba(184,92,58,0.06), transparent 70%)" }}
+      />
+
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20">
+        {/* Editorial split: left header, right form */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-16 lg:gap-24">
+          {/* Left column: heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="lg:sticky lg:top-28 lg:self-start"
+          >
+            <span className="section-label block mb-5">06 // BOOKINGS</span>
+            <h2
+              className="section-heading mb-6"
+              style={{ fontSize: "clamp(2.2rem, 3.5vw, 3.2rem)", color: "#F5F1EB" }}
+            >
+              Tell Us Your<br />
+              <em className="italic font-light text-[#C86A4B] not-italic" style={{ fontStyle: "italic" }}>Story</em>
+            </h2>
+            <div className="rule" />
+            <p
+              className="mt-4 leading-[1.85] max-w-[280px]"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontStyle: "italic",
+                fontSize: "13px",
+                color: "rgba(245,241,235,0.5)",
+              }}
+            >
+              Ready to capture your unscripted moments? Share your details and we&apos;ll get back to you within 24 hours.
+            </p>
+            {/* Accent divider */}
+            <div
+              className="mt-10 w-px hidden lg:block"
+              style={{ height: "80px", background: "linear-gradient(to bottom, rgba(184,92,58,0.4), transparent)" }}
+            />
+          </motion.div>
+
+          {/* Right column: form */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
+            <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name */}
               <div className="flex flex-col">
@@ -171,15 +208,28 @@ export default function Enquiry() {
 
             {/* Submit Button */}
             <div className="pt-4">
+              {/* Active-state tactile feedback on button */}
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-3 bg-[#F5F1EB] hover:bg-[#B85C3A] text-[#19160F] hover:text-[#F5F1EB] py-4 rounded-none text-[10px] font-bold uppercase tracking-[0.24em] transition-all duration-500 cursor-pointer focus:outline-none"
+                className="w-full inline-flex items-center justify-center gap-3 bg-[#F5F1EB] text-[#19160F] py-4 text-[9.5px] font-bold uppercase tracking-[0.26em] cursor-pointer focus:outline-none"
+                style={{ transition: "background 0.4s cubic-bezier(0.22,1,0.36,1), color 0.4s cubic-bezier(0.22,1,0.36,1)" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = "#B85C3A";
+                  (e.currentTarget as HTMLButtonElement).style.color = "#F5F1EB";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = "#F5F1EB";
+                  (e.currentTarget as HTMLButtonElement).style.color = "#19160F";
+                }}
+                onMouseDown={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(0.985)"; }}
+                onMouseUp={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
               >
                 <Send className="w-3.5 h-3.5" />
-                <span>Confirm & Send to WhatsApp</span>
+                <span>Confirm &amp; Send to WhatsApp</span>
               </button>
             </div>
-          </form>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>
