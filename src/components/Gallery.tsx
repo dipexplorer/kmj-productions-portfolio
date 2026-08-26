@@ -39,7 +39,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     couple: "Rohan & Priya",
     storyType: "Under the Fairy Lights",
     category: "events",
-    image: "/images/wedding_candid_embrace.png",
+    image: "/images/hand-in-hand02.png",
   },
   {
     id: "g-5",
