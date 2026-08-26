@@ -80,7 +80,7 @@ export default function Testimonials() {
     <section
       id="testimonials"
       ref={ref}
-      className="relative py-28 bg-[#0E0C0B] overflow-hidden"
+      className="relative py-16 lg:py-28 bg-[#0E0C0B] overflow-hidden"
     >
       {/* Large decorative quotation mark */}
       <div
@@ -109,7 +109,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="mb-16"
+          className="mb-8 lg:mb-16"
         >
           <span className="section-label block mb-4">05 // TESTIMONIALS</span>
           <h2

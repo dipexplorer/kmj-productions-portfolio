@@ -74,7 +74,7 @@ export default function Films() {
     <section
       id="films"
       ref={sectionRef}
-      className="relative py-28 bg-[#0E0C0B] overflow-hidden"
+      className="relative py-16 lg:py-28 bg-[#0E0C0B] overflow-hidden"
     >
       {/* Ambient top glow */}
       <div
@@ -88,7 +88,7 @@ export default function Films() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="flex items-end justify-between mb-14"
+          className="flex items-end justify-between mb-8 lg:mb-14"
         >
           <div>
             <span

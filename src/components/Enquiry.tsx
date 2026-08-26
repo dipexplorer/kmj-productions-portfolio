@@ -47,7 +47,7 @@ export default function Enquiry() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="enquiry" ref={ref} className="py-28 lg:py-40 bg-[#0E0C0B] relative overflow-hidden">
+    <section id="enquiry" ref={ref} className="py-16 lg:py-40 bg-[#0E0C0B] relative overflow-hidden">
       {/* Ambient glow */}
       <div
         className="absolute bottom-0 left-1/4 w-[500px] h-64 pointer-events-none"

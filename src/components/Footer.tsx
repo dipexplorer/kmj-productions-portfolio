@@ -10,8 +10,8 @@ export default function Footer() {
       <div style={{ height: "1px", background: "rgba(245,241,235,0.06)" }} />
 
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">
 
           {/* Brand column */}
           <div className="md:col-span-5">

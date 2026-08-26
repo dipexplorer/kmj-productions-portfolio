@@ -74,7 +74,7 @@ export default function Packages() {
     <section
       id="packages"
       ref={ref}
-      className="relative py-28 bg-[#0E0C0B] overflow-hidden"
+      className="relative py-16 lg:py-28 bg-[#0E0C0B] overflow-hidden"
     >
       {/* Ambient glow */}
       <div
@@ -123,7 +123,7 @@ export default function Packages() {
         </motion.div>
 
         {/* Packages grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: "rgba(245,241,235,0.06)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-px" style={{ background: "rgba(245,241,235,0.06)" }}>
           {PACKAGES.map((pkg, i) => (
             <motion.div
               key={pkg.name}
