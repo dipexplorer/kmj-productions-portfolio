@@ -52,41 +52,56 @@ export default function About() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            {/* ── HIGH-END EDITORIAL IMAGE FRAME ── */}
-            <div className="relative aspect-3/4 p-px group cursor-pointer">
-              {/* Refined double-border matte */}
-              <div className="absolute inset-0 border border-[rgba(245,241,235,0.1)] transition-colors duration-700 group-hover:border-[rgba(200,106,75,0.3)] z-20 pointer-events-none" />
-              <div className="absolute inset-3 border border-[rgba(245,241,235,0.05)] transition-all duration-700 group-hover:inset-4 group-hover:border-[rgba(245,241,235,0.15)] z-20 pointer-events-none" />
+            {/* ── HIGH-END DECONSTRUCTED EDITORIAL FRAME ── */}
+            <div className="relative aspect-[3/3.8] group cursor-pointer mt-8 ml-4 mb-4">
+              
+              {/* Deconstructed Border Frame - Extending outside the image bounds */}
+              <div className="absolute -inset-6 border border-[rgba(245,241,235,0.12)] z-0 transition-all duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01] group-hover:border-[rgba(200,106,75,0.3)]" />
+              
+              {/* Corner Accents (Crosshairs) - Breaking the edges */}
+              <div className="absolute -top-8 -left-8 w-6 h-px bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:-translate-x-2" />
+              <div className="absolute -top-8 -left-8 w-px h-6 bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:-translate-y-2" />
+              
+              <div className="absolute -bottom-8 -right-8 w-6 h-px bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:translate-x-2" />
+              <div className="absolute -bottom-8 -right-8 w-px h-6 bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:translate-y-2" />
 
-              {/* Offset elegant shadow block (more subtle) */}
+              {/* Offset shadow/matte block with an angled cut */}
               <div
-                className="absolute -bottom-4 -right-4 w-full h-full bg-[#0a0908] -z-10 transition-transform duration-700 group-hover:translate-x-1 group-hover:translate-y-1"
-                style={{ border: "1px solid rgba(245,241,235,0.04)" }}
+                className="absolute -top-4 -right-4 w-full h-full bg-[#0a0908] -z-10 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2 group-hover:-translate-y-2"
+                style={{ clipPath: "polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%)", border: "1px solid rgba(245,241,235,0.04)" }}
               />
 
-              {/* Main image container */}
-              <div className="relative w-full h-full overflow-hidden bg-[#0a0908]">
+              {/* Floating 'raw' block acting like tape or a loose cutout */}
+              <div className="absolute top-12 -right-8 w-12 h-16 bg-[#120F0D] border border-[rgba(245,241,235,0.1)] z-20 transition-transform duration-1000 group-hover:rotate-3 shadow-2xl flex items-center justify-center">
+                <span className="font-mono text-[7px] text-[rgba(245,241,235,0.4)] -rotate-90 tracking-widest">FIG.1</span>
+              </div>
+
+              {/* Main image container with clipped opposite corners (top-left & bottom-right) */}
+              <div 
+                className="relative w-full h-full overflow-hidden bg-[#0a0908] z-10 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{ clipPath: "polygon(6% 0, 100% 0, 100% 94%, 94% 100%, 0 100%, 0 6%)" }}
+              >
                 <Image
                   src="/images/STORYTELLERS.png"
                   alt="House of Tales — Behind the Scenes"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-all duration-1000 group-hover:scale-105 filter grayscale-20 opacity-90 group-hover:grayscale-0 group-hover:opacity-100"
-                  style={{ filter: "brightness(0.98) contrast(1.02) saturate(0.95)", objectPosition: "center 30%" }}
+                  className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 opacity-95 group-hover:opacity-100"
+                  style={{ filter: "brightness(0.96) contrast(1.05) saturate(0.9)", objectPosition: "center 30%" }}
                 />
 
                 {/* Bottom caption with gradient fade */}
                 <div
-                  className="absolute bottom-0 inset-x-0 p-8 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                  className="absolute bottom-0 inset-x-0 p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
                   style={{
-                    background: "linear-gradient(to top, rgba(14,12,11,0.95) 0%, rgba(14,12,11,0.2) 50%, transparent 100%)",
+                    background: "linear-gradient(to top, rgba(14,12,11,0.98) 0%, rgba(14,12,11,0.4) 50%, transparent 100%)",
                   }}
                 >
                   <p
-                    className="italic font-light transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700"
+                    className="italic font-light transform translate-y-4 group-hover:translate-y-0 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]"
                     style={{
                       fontFamily: "var(--font-hero)",
-                      fontSize: "15px",
+                      fontSize: "14px",
                       color: "rgba(245,241,235,0.9)",
                       letterSpacing: "0.02em",
                     }}
@@ -94,6 +109,13 @@ export default function About() {
                     Behind the lens — Mumbai, India
                   </p>
                 </div>
+              </div>
+
+              {/* Overlapping Editorial Typography (Breaking the bounds on the left) */}
+              <div className="absolute -left-10 bottom-24 z-30 pointer-events-none transform -rotate-90 origin-bottom-left">
+                <span className="font-mono text-[9px] uppercase tracking-[0.45em] text-[#C86A4B] whitespace-nowrap">
+                  Vol. 01 — Archives
+                </span>
               </div>
             </div>
 
