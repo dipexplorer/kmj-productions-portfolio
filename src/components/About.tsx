@@ -50,30 +50,30 @@ export default function About() {
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
+            className="relative w-full max-w-lg mx-auto lg:max-w-none"
           >
             {/* ── HIGH-END DECONSTRUCTED EDITORIAL FRAME ── */}
-            <div className="relative aspect-[3/3.8] group cursor-pointer mt-8 ml-4 mb-4">
+            <div className="relative aspect-[3/3.8] group cursor-pointer mt-8 md:ml-4 mb-8 md:mb-4">
               
               {/* Deconstructed Border Frame - Extending outside the image bounds */}
-              <div className="absolute -inset-6 border border-[rgba(245,241,235,0.12)] z-0 transition-all duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01] group-hover:border-[rgba(200,106,75,0.3)]" />
+              <div className="absolute -inset-4 md:-inset-6 border border-[rgba(245,241,235,0.12)] z-0 transition-all duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.01] group-hover:border-[rgba(200,106,75,0.3)]" />
               
               {/* Corner Accents (Crosshairs) - Breaking the edges */}
-              <div className="absolute -top-8 -left-8 w-6 h-px bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:-translate-x-2" />
-              <div className="absolute -top-8 -left-8 w-px h-6 bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:-translate-y-2" />
+              <div className="absolute -top-4 md:-top-8 -left-4 md:-left-8 w-4 md:w-6 h-px bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:-translate-x-2" />
+              <div className="absolute -top-4 md:-top-8 -left-4 md:-left-8 w-px h-4 md:h-6 bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:-translate-y-2" />
               
-              <div className="absolute -bottom-8 -right-8 w-6 h-px bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:translate-x-2" />
-              <div className="absolute -bottom-8 -right-8 w-px h-6 bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:translate-y-2" />
+              <div className="absolute -bottom-4 md:-bottom-8 -right-4 md:-right-8 w-4 md:w-6 h-px bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:translate-x-2" />
+              <div className="absolute -bottom-4 md:-bottom-8 -right-4 md:-right-8 w-px h-4 md:h-6 bg-[#C86A4B] opacity-60 transition-transform duration-700 group-hover:translate-y-2" />
 
               {/* Offset shadow/matte block with an angled cut */}
               <div
-                className="absolute -top-4 -right-4 w-full h-full bg-[#0a0908] -z-10 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2 group-hover:-translate-y-2"
+                className="absolute -top-3 md:-top-4 -right-3 md:-right-4 w-full h-full bg-[#0a0908] -z-10 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2 group-hover:-translate-y-2"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%)", border: "1px solid rgba(245,241,235,0.04)" }}
               />
 
               {/* Floating 'raw' block acting like tape or a loose cutout */}
-              <div className="absolute top-12 -right-8 w-12 h-16 bg-[#120F0D] border border-[rgba(245,241,235,0.1)] z-20 transition-transform duration-1000 group-hover:rotate-3 shadow-2xl flex items-center justify-center">
-                <span className="font-mono text-[7px] text-[rgba(245,241,235,0.4)] -rotate-90 tracking-widest">FIG.1</span>
+              <div className="absolute top-8 md:top-12 -right-4 md:-right-8 w-8 md:w-12 h-12 md:h-16 bg-[#120F0D] border border-[rgba(245,241,235,0.1)] z-20 transition-transform duration-1000 group-hover:rotate-3 shadow-2xl flex items-center justify-center">
+                <span className="font-mono text-[6px] md:text-[7px] text-[rgba(245,241,235,0.4)] -rotate-90 tracking-widest">FIG.1</span>
               </div>
 
               {/* Main image container with clipped opposite corners (top-left & bottom-right) */}
@@ -92,7 +92,7 @@ export default function About() {
 
                 {/* Bottom caption with gradient fade */}
                 <div
-                  className="absolute bottom-0 inset-x-0 p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
+                  className="absolute bottom-0 inset-x-0 p-6 md:p-8 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
                   style={{
                     background: "linear-gradient(to top, rgba(14,12,11,0.98) 0%, rgba(14,12,11,0.4) 50%, transparent 100%)",
                   }}
@@ -101,7 +101,7 @@ export default function About() {
                     className="italic font-light transform translate-y-4 group-hover:translate-y-0 transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)]"
                     style={{
                       fontFamily: "var(--font-hero)",
-                      fontSize: "14px",
+                      fontSize: "13px",
                       color: "rgba(245,241,235,0.9)",
                       letterSpacing: "0.02em",
                     }}
@@ -112,8 +112,8 @@ export default function About() {
               </div>
 
               {/* Overlapping Editorial Typography (Breaking the bounds on the left) */}
-              <div className="absolute -left-10 bottom-24 z-30 pointer-events-none transform -rotate-90 origin-bottom-left">
-                <span className="font-mono text-[9px] uppercase tracking-[0.45em] text-[#C86A4B] whitespace-nowrap">
+              <div className="absolute -left-6 md:-left-10 bottom-16 md:bottom-24 z-30 pointer-events-none transform -rotate-90 origin-bottom-left">
+                <span className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.45em] text-[#C86A4B] whitespace-nowrap">
                   Vol. 01 — Archives
                 </span>
               </div>
@@ -124,7 +124,7 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.9, rotate: -30 }}
               animate={inView ? { opacity: 1, scale: 1, rotate: 0 } : {}}
               transition={{ delay: 0.6, duration: 1.2, ease: "easeOut" }}
-              className="absolute -left-8 top-12 lg:-left-12 z-30 flex items-center justify-center rounded-full pointer-events-none mix-blend-screen"
+              className="absolute -left-4 md:-left-12 top-4 md:top-12 z-30 flex items-center justify-center rounded-full pointer-events-none mix-blend-screen scale-75 md:scale-100"
               style={{
                 width: "120px",
                 height: "120px",

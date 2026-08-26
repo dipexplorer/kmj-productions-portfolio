@@ -65,11 +65,10 @@ export default function Hero() {
 
         {/* Left bleed gradient */}
         <div
-          className="absolute inset-y-0 left-0 z-10"
+          className="absolute inset-y-0 left-0 z-10 w-[85%] md:w-[50%]"
           style={{
-            width: "50%",
             background:
-              "linear-gradient(to right, #0E0C0B 0%, #0E0C0B 20%, rgba(14,12,11,0.85) 55%, transparent 100%)",
+              "linear-gradient(to right, #0E0C0B 0%, rgba(14,12,11,0.95) 30%, rgba(14,12,11,0.7) 60%, transparent 100%)",
           }}
         />
         {/* Bottom vignette */}
@@ -123,7 +122,7 @@ export default function Hero() {
         <div className="flex-1 flex items-center">
           <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-20">
             <motion.div
-              className="relative md:max-w-[42%] lg:max-w-[40%] xl:max-w-[38%] mt-16"
+              className="relative w-full md:max-w-[42%] lg:max-w-[40%] xl:max-w-[38%] mt-24 md:mt-16"
               variants={containerVariants}
               initial="hidden"
               animate="show"
@@ -145,7 +144,7 @@ export default function Hero() {
                 className="uppercase font-light leading-[1.03] mb-10"
                 style={{
                   fontFamily: "var(--font-hero)",
-                  fontSize: "clamp(2.1rem, 3.6vw, 3.4rem)",
+                  fontSize: "clamp(2rem, 8vw, 3.4rem)",
                   color: "#F5F1EB",
                   letterSpacing: "0.025em",
                 }}
@@ -184,7 +183,7 @@ export default function Hero() {
               </motion.div>
 
               {/* CTA Buttons */}
-              <motion.div variants={itemVariants} className="flex items-center gap-10">
+              <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-6 md:gap-10 mt-4 md:mt-0">
                 {/* Primary CTA — underline style */}
                 <a
                   href="#gallery"
