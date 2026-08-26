@@ -157,7 +157,7 @@ export default function Gallery() {
         </motion.div>
 
         {/* Cinematic Staggered Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 lg:gap-16">
           <AnimatePresence mode="popLayout">
             {filtered.map((item, i) => (
               <motion.div
@@ -168,6 +168,8 @@ export default function Gallery() {
                 exit={{ opacity: 0, scale: 0.94 }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className={`group cursor-pointer relative transition-all duration-700 hover:-translate-y-2 ${
+                  i % 2 === 1 ? "mt-8 sm:mt-12 lg:mt-0" : ""
+                } ${
                   i % 3 === 1 ? "lg:mt-24" : i % 3 === 2 ? "lg:mt-12" : ""
                 }`}
               >
@@ -189,11 +191,11 @@ export default function Gallery() {
                     />
                     
                     {/* Inner hairline matte effect */}
-                    <div className="absolute inset-2 md:inset-3 border border-[rgba(245,241,235,0.15)] opacity-100 md:opacity-0 pointer-events-none z-20 transition-all duration-700 md:group-hover:opacity-100" />
+                    <div className="absolute inset-1.5 sm:inset-2 md:inset-3 border border-[rgba(245,241,235,0.15)] opacity-100 md:opacity-0 pointer-events-none z-20 transition-all duration-700 md:group-hover:opacity-100" />
 
                     {/* Hover overlay — elegant single div fade (always visible on mobile) */}
                     <div
-                      className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 z-10"
+                      className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 lg:p-8 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 z-10"
                       style={{
                         background: "linear-gradient(to top, rgba(14,12,11,0.95) 0%, rgba(14,12,11,0.25) 50%, transparent 100%)",
                       }}
@@ -217,7 +219,7 @@ export default function Gallery() {
                         <p
                           style={{
                             fontFamily: "var(--font-hero)",
-                            fontSize: "clamp(1.5rem, 2.2vw, 2rem)",
+                            fontSize: "clamp(1.1rem, 2vw, 2rem)",
                             fontWeight: 300,
                             color: "#F5F1EB",
                             lineHeight: 1,
