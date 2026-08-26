@@ -45,7 +45,7 @@ export default function Navbar() {
         }}
       >
         <div 
-          className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 flex items-center justify-between transition-all duration-500"
+          className="w-full px-8 sm:px-12 lg:px-16 xl:px-24 2xl:px-32 flex items-center justify-between transition-all duration-500"
           style={{ height: isScrolled ? "68px" : "96px" }}
         >
           {/* Brand Wordmark */}

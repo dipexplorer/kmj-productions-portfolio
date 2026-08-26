@@ -120,7 +120,7 @@ export default function Hero() {
       >
         {/* ─── MAIN TYPOGRAPHY ──────────────────────────────── */}
         <div className="flex-1 flex items-center">
-          <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20">
+          <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-24 2xl:px-32">
             <motion.div
               className="relative w-full md:max-w-[42%] lg:max-w-[40%] xl:max-w-[38%] mt-24 md:mt-16"
               variants={containerVariants}
